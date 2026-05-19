@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Nefise Bora'nın n8n 101 dersi için hazırlanan ekran görüntülü otomasyon rehberi." />
+    <title>n8n Rehberi | Nefise Bora</title>
+    <link rel="stylesheet" href="assets/site.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-nav" aria-label="Ana bölümler">
+        <div class="top-nav-inner">
+          <button class="mobile-nav-toggle" type="button" data-toggle-side>Bölümler</button>
+          <div class="brand-lockup">
+            <span>n8n Rehberi</span>
+            <strong>Katılımcı Kaynağı</strong>
+            <a href="https://www.linkedin.com/in/nefisebora/" target="_blank" rel="noreferrer">Nefise Bora tarafından hazırlandı</a>
+          </div>
+          <nav class="module-tabs" aria-label="Modül seçimi">
+            <a href="#cover" data-module-tab="rehber">Rehber</a>
+            <a href="#baslangic" data-module-tab="baslangic">Başlangıç</a>
+            <a href="#temel-akis" data-module-tab="temel-akis">Temel</a>
+            <a href="#entegrasyonlar" data-module-tab="entegrasyonlar">Entegrasyon</a>
+            <a href="#yonetim" data-module-tab="yonetim">Yönetim</a>
+            <a href="#auth" data-module-tab="auth">Auth</a>
+          </nav>
+        </div>
+      </header>
+      <main class="course-shell">
+        <button class="side-nav-scrim" type="button" aria-label="Alt navigasyonu kapat" data-close-side></button>
+        <aside class="side-nav" aria-label="Bölüm içindekiler" data-side-nav>
+          <div class="side-nav-card">
+            <div class="side-nav-heading">
+              <span>İçindekiler</span>
+              <strong data-side-title>Rehber</strong>
+            </div>
+            <nav data-side-list></nav>
+          </div>
+        </aside>
+        <div class="content-column"><article class="page-wrap lesson-content">
+
+<header id="cover" class="cover">
+  <div class="kicker">n8n 101</div>
+  <h1>n8n Rehberi</h1>
+  <p class="subtitle">Ekran görüntüleriyle desteklenmiş, derste yanınızda açık kalacak otomasyon kaynağı.</p>
+  <div class="cover-meta">
+    <span>Nefise Bora</span>
+    <span>Katılımcı rehberi</span>
+    <span>16 konu</span>
+  </div>
+</header>
+
+<section id="okuma-rehberi" class="box good">
+  <div class="box-title">Okuma Rehberi</div>
+  <p>Bu kaynak, n8n dersinde gösterilen kısa rehberleri tek bir sitede toplar. Bölümler kendi başına okunabilir; derste ilgili başlığa geçip ekran görüntülerini takip etmeniz için tasarlandı.</p>
+  <p>Kaynak notların özgün sırası, başlık yapısı, ekran görüntüleri ve GIF destekleri korunmuştur. Doğrudan öğrenci hitabı, sistem kuralına uygun şekilde <strong>siz</strong> diliyle düzenlenmiştir.</p>
+</section>
+
+<section id="baslangic" class="module-divider">
+  <div class="kicker">Başlangıç</div>
+  <h2>Başlangıç ve Arayüz</h2>
+  <p>n8n mantığı, hesap açma, arayüz ve ilk workflow fikri.</p>
+</section>
+
+<section id="1-n8n-nedir" class="guide-doc">
+  <div class="chapter-tag">Başlangıç</div>
+  <h2>1- n8n Nedir?</h2>
+  <p>n8n, kod yazmadan otomasyon oluşturmanızı sağlayan bir platformdur. İş akışları (workflows) kurar, bu iş akışlarında her adımı bir kutucuk (node) olarak tanımlarsınız. Mantığı çok basit:</p>
+<p><strong>“Bir olay olursa → şunu yap”</strong>.</p>
+<blockquote><p>💬 Örnek: Her sabah saat 9’da bana Telegram’dan “Günaydın” mesajı gönder.</p></blockquote>
+<h2 id="1-n8n-nedir-hesap-olustur-n8n-cloud">Hesap Oluştur: n8n.cloud</h2>
+<p>Tarayıcınızdan <a href="https://n8n.cloud" target="_blank" rel="noreferrer">https://n8n.cloud</a>’a gidin. “Sign Up” butonuna tıklayarak ücretsiz bir hesap oluştur.</p>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510183544.png" alt="Ekran görüntüsü 20250510183544" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510183544</figcaption></figure>
+<p>Workflow başlamadan önce gel, ara yüzü tanıyalım. Her şeyi kuracağınız bu ekran, sizin dijital çalışma masanız olacak.</p>
+<hr />
+<h2 id="1-n8n-nedir-yeni-workflow-baslat">Yeni Workflow Başlat</h2>
+<p>Giriş yaptıktan sonra sağ üstte yer alan <strong>“Create Workflow”</strong> butonuna tıklayın.  Merak etmeyin her şeyi detaylı bir şekilde inceleyeceğiz.  Ara yüzü tanımak için buradan başlayalım.</p>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510183811.png" alt="Ekran görüntüsü 20250510183811" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510183811</figcaption></figure>
+<p>Bu işlemi yaptığınızda artık çalışma ekranındasınız.  Ve muhtemelen aşağıdaki gibi bir şeyler görüyorsunuz. n8n’de işlemlerinizi gerçekleştirdiğiniz bu alanın adı <strong>Editor UI</strong>. Burada workflow’larınızı oluşturabilir, node&#39;ları birbirine bağlayınyabilir ve sisteminizi test edebilirsiniz.</p>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510190440.png" alt="Ekran görüntüsü 20250510190440" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510190440</figcaption></figure>
+<hr />
+<h3 id="1-n8n-nedir-sol-panel-kontrol-merkezi">Sol Panel – Kontrol Merkezi</h3>
+<p>Ekranın sol tarafındaki turuncu ile işaretlediğim panel, workflow yönetiminin merkezidir. Peki &quot;&quot; Sol Panelde&quot; neler var?</p>
+<table><thead><tr><th></th><th></th></tr></thead><tbody><tr><td><strong>Overview</strong></td><td>Tüm workflow’larına ve kayıtlı API bağlantı bilgilerine buradan erişebilirsiniz.</td></tr><tr><td><strong>Projects</strong></td><td>Workflow’ları gruplamak için kullanılır. (Personal ve My Project gibi)</td></tr><tr><td><strong>Admin Panel</strong></td><td>n8n Cloud kullanıcıları için kullanım, fatura ve erişim ayarlarının olduğu kısım.</td></tr><tr><td><strong>Templates</strong></td><td>Hazır workflow örnekleri. Başlangıç için ilham verici ve zaman kazandırır.</td></tr><tr><td><strong>Variables</strong></td><td>(Pro/Enterprise planlarda) Workflow&#39;lar arasında kullanılabilecek sabit verileri tutar.</td></tr><tr><td><strong>Insights</strong></td><td>Çalışma istatistikleri ve genel kullanım bilgileri burada gösterilir.</td></tr><tr><td><strong>Help</strong></td><td>Yardım dokümanları, topluluk bağlantıları ve destek kaynaklarına ulaşmanızı sağlar.</td></tr><tr><td><strong>1 update</strong></td><td>Uygulama ile ilgili güncellemeler burada görünür.</td></tr><tr><td><strong>Kullanıcı Menüsü</strong></td><td>Ekranın en altında sizin adınızı göreceğiniz alan. Ayarlara buradan ulaşabilirsiniz.</td></tr></tbody></table>
+<p><strong>İpucu:</strong> Sol paneli gizlemek veya göstermek için en üstteki küçük ok simgesine tıklayabilirsiniz. Böylece ekranda daha fazla çalışma alanı elde edebilirsiniz.</p>
+<hr />
+<h3 id="1-n8n-nedir-ust-bar-workflow-a-ait-ayarlar">Üst Bar – Workflow’a Ait Ayarlar</h3>
+<p>Editor ekranının üst kısmındaki pembe ile işaretlediğim alan.</p>
+<ul><li>Workflow’un ismi (varsayılan: _My Workflow_)</li></ul>
+<ul><li>Aktif/Pasif butonu</li></ul>
+<ul><li>Kaydet butonu</li></ul>
+<ul><li>Paylaş (Pro plan) gibi kontroller yer alır.</li></ul>
+<hr />
+<h3 id="1-n8n-nedir-canvas-calisma-alani">Canvas – Çalışma Alanı</h3>
+<p>Kocaman yeşil kutunun içine aldığım ortadaki gri, noktalı arka planlı bölüm sizin <strong>canvas</strong> alanınız. Tüm node’lar burada yer alır, birbirine bağlayınnır ve çalıştırılır. Yani burası sizin çalışma masanız :)</p>
+<p>Canvas üzerinde:</p>
+<ul><li>+ butonu ile node ekleyinnir </li></ul>
+<p>-</p>
+<ul><li>Zoom yapabilir, hizalama yapılabilir</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510193058.png" alt="Ekran görüntüsü 20250510193058" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510193058</figcaption></figure>
+<p>-</p>
+<ul><li>Çalışma alanına sağ tıklayarak notlar eklenebilir</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510193001.png" alt="Ekran görüntüsü 20250510193001" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510193001</figcaption></figure>
+<ul><li>İlk adımı atmak için “Add first step” kutusu kullanılır. Hazırsanız tıklayın! </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250510192628.png" alt="Ekran görüntüsü 20250510192628" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250510192628</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/trigger.gif" alt="Trigger" loading="lazy" decoding="async" /><figcaption>Trigger</figcaption></figure>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum" class="guide-doc">
+  <div class="chapter-tag">Başlangıç</div>
+  <h2>n8n ile Otomasyon 1. Bölüm - Hiçbir Şey Bilmeyenler İçin 1. Bölüm</h2>
+  <blockquote><p>Otomasyon mu? Kodlama mı? n8n mi?  </p><p><strong>“Ben bunları hiç duymadım”</strong> diyorsanız doğru yerdesiniz.  </p><p>Bu rehber sizin için yazıldı.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-bu-rehber-ne-icin">🎓 Bu Rehber Ne İçin?</h2>
+<p>Bu, &quot;n8n nedir?&quot; sorusundan başlayıp, kendi otomasyonlarınızı kurabileceğiniz seviyeye kadar sizi götürecek bir eğitim serisidir. Her şey sıfırdan, basitçe, parça parça anlatılacak.</p>
+<blockquote><p>Kahvenizi alın, rahatlayın, birlikte öğreneceğiz.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-n8n-nedir">🧠 n8n Nedir?</h2>
+<p>n8n, otomatik iş yapmayı sağlayan bir araçtır.</p>
+<ul><li>Günlük tekrar eden işleri sizin yerinize yapar.  </li><li>“Eğer bu olursa → şunu yap” mantığıyla çalışır.  </li><li>Kod bilmeden, tıklayarak akışlar (workflow) oluşturursunuz.</li></ul>
+<p><strong>Örnek:</strong></p>
+<blockquote><p>Her sabah saat 9’da size Telegram’dan “Günaydın 🌞” mesajı gelsin.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-n8n-ne-ise-yarar">📦 n8n Ne İşe Yarar?</h2>
+<table><thead><tr><th>Durum</th><th>Otomasyon Fikri</th></tr></thead><tbody><tr><td>Form doldurulunca mail gitmesi</td><td>Webhook + Email Node</td></tr><tr><td>Yeni takipçi geldiğinde uyarı</td><td>Instagram API + Telegram mesajı</td></tr><tr><td>Dosya yüklendiğinde kayıt alınması</td><td>Google Drive + Notion</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-bu-egitime-kimler-uygun">🧰 Bu Eğitime Kimler Uygun?</h2>
+<ul><li>Kod bilmiyorsanız ama otomasyon ilginizi çekiyorsa  </li><li>“Benim işlerim çok tekrar ediyor” diyorsanız  </li><li>“Bir işi bir kere yapayım, sistem hep yapsın” diyorsanız  </li></ul>
+<p>O zaman bu seri tam size göre.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-baslamak-icin-ne-gerekir">🛠 Başlamak İçin Ne Gerekir?</h2>
+<ul><li>Bilgisayar kullanabiliyor olmanız yeterli.  </li><li>Teknik bilgi şart değil.  </li><li>İsterseniz kurulum bile yapmadan başlayabilirsiniz!</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-1-adim-en-kolay-kurulum">✅ 1. Adım: En Kolay Kurulum</h2>
+<p>🔹 Tarayıcınızdan şu adrese gidin: 👉 <a href="https://n8n.cloud" target="_blank" rel="noreferrer">https://n8n.cloud</a></p>
+<p>🔹 “Sign Up” butonuna tıklayın, kayıt olun. 🔹 n8n paneli otomatik açılacak. 🔹 Her şey hazır, sadece otomasyonunuzu kurmaya başlayın!</p>
+<blockquote><p>Kurulum yapmanıza bile gerek yok! 😌</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-2-bolum-node-ne-demek">🔜 2. Bölüm: “Node” Ne Demek?</h3>
+<p>Otomasyonun LEGO parçaları sizi bekliyor. Her node bir aksiyonu temsil ediyor. Bu işin temel taşı onlar.</p>
+<hr />
+</section>
+
+<section id="temel-akis" class="module-divider">
+  <div class="kicker">Temel</div>
+  <h2>Temel Workflow Mantığı</h2>
+  <p>Node, webhook, HTTP request, koşullar ve ilk uygulamalı akışlar.</p>
+</section>
+
+<section id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak" class="guide-doc">
+  <div class="chapter-tag">Temel</div>
+  <h2>n8n ile Otomasyon 2. Bölüm - Otomasyon Kurmak</h2>
+  <blockquote><p>Artık n8n’e giriş yaptık.  </p><p>Peki herkesin dilindeki bu “node” da ne ola ki?</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-node-nedir-en-basit-haliyle">🔹 Node Nedir? (<em>En Basit Haliyle</em>)</h2>
+<p>Node, bir işlemi temsil eden kutudur. n8n’deki her işlem bir node’dur.</p>
+<ul><li>“Veri al” → bir node  </li><li>“Mesaj gönder” → bir node  </li><li>“Bir şeyi kontrol edin” → yine bir node</li></ul>
+<blockquote><p>Düşün: Bir işin her adımı bir kutu. Kutuları birbirine bağlayındık mı iş akışı çalışır!</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-gercek-hayattan-ornek">🧱 Gerçek Hayattan Örnek</h2>
+<p>Senaryo: Bir form doldurulunca bana mail gelsin.</p>
+<table><thead><tr><th>Adım</th><th>Node Türü</th><th>Açıklama</th></tr></thead><tbody><tr><td>1</td><td>Webhook</td><td>Form verisini yakalar</td></tr><tr><td>2</td><td>Email</td><td>E-posta yollar</td></tr></tbody></table>
+<p>👉 Bu işin her adımı bir node. Node’lar sırayla çalışır. İşte buna <strong>workflow</strong> (iş akışı) diyoruz.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-node-turleri-nelerdir">📊 Node Türleri Nelerdir?</h2>
+<p>n8n içinde yüzlerce node var ama en sık kullanılanlardan bazıları:</p>
+<table><thead><tr><th>Node Türü</th><th>Ne İşe Yarar?</th></tr></thead><tbody><tr><td><strong>Webhook</strong></td><td>Dışardan veri alır (form, API vs.)</td></tr><tr><td><strong>HTTP Request</strong></td><td>Dış sistemlere veri gönderir/alır</td></tr><tr><td><strong>Set</strong></td><td>El ile veri oluşturmanızı sağlar</td></tr><tr><td><strong>Function</strong></td><td>Kendi JavaScript kodunuzu yazmanızı sağlar (ileri)</td></tr><tr><td><strong>Email</strong></td><td>E-posta gönderir</td></tr><tr><td><strong>Telegram</strong></td><td>Telegram botunuz üzerinden mesaj yollar</td></tr><tr><td><strong>Cron</strong></td><td>Belirli saatlerde otomatik çalışır (ör: her sabah)</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-uygulamali-ornek-gunaydin-workflow">🧪 Uygulamalı Örnek: “Günaydın Workflow”</h2>
+<p>Senaryo: Her sabah saat 9’da bana Telegram’dan “Günaydın!” mesajı gelsin.</p>
+<ol><li><strong>Cron Node</strong> → Saat ayarı: Her gün 09:00  </li><li><strong>Telegram Node</strong> → Hedef kullanıcıya mesaj: <code>&quot;Günaydın ☀️&quot;</code></li></ol>
+<p>Bu iki node&#39;u birbirine bağlayın → Workflow aktif hale getirin → Artık sistem sabah sizi hatırlıyor 🤖</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-ipuclari">🧠 İpuçları</h2>
+<ul><li>Her node’un kendi ayar paneli vardır. Orada <strong>input (girdi)</strong> ve <strong>output (çıktı)</strong> alanları görünür.</li><li>Node&#39;ları sıraya koymak için sürükle-bırak yeterlidir.</li><li>n8n her node arasında neyin geçtiğini görmenizi sağlar (Debug modu).</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-mini-gorev">🎯 Mini Görev</h2>
+<blockquote><p>İlk “Node Testini” yap:</p><p>- <code>Set</code> node’u ekleyin  </p><p>- İçine <code>&quot;Merhaba dünya&quot;</code> gibi bir metin yazın  </p><p>- Çalıştırın ve çıktıyı inceleyin  </p><p>Böylece n8n’de “elle veri üretmeyi” öğrenmiş olursunuz.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-3-bolum-ilk-kendi-workflow-unu-kur-sifirdan-tiklayarak">🔜 3. Bölüm: İlk Kendi Workflow’unu Kur – Sıfırdan, Tıklayarak!</h3>
+<p>Artık node’ları tanıdığımıza göre kendi iş akışını kurma zamanı geldi. Gerçek bir senaryoyu adım adım kuracağız.</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur" class="guide-doc">
+  <div class="chapter-tag">Temel</div>
+  <h2>n8n ile Otomasyon 3. Bölüm - İlk Kendi Workflow’unu Kur!</h2>
+  <blockquote><p>Artık node nedir biliyoruz. Şimdi kendi otomasyonumuzu kurma zamanı geldi.  </p><p>Adım adım, tıklayarak ilerleyeceğiz. Sıfır kod, sıfır stres.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-hedef-form-doldurulunca-e-posta-gitsin">🎯 Hedef: Form Doldurulunca E-Posta Gitsin</h2>
+<p>Hayal edin: Bir kullanıcı sizin web sitenizdeki formu dolduruyor. sizin e-postanıza otomatik bilgi geliyor. Tek bir tuşa basmadan.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-kullanilacak-node-lar">🧩 Kullanılacak Node’lar</h2>
+<table><thead><tr><th>Node</th><th>Görevi</th></tr></thead><tbody><tr><td><strong>Webhook</strong></td><td>Formdan gelen veriyi yakalar</td></tr><tr><td><strong>Email</strong></td><td>size e-posta gönderir</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-adim-adim-kurulum">🛠 Adım Adım Kurulum</h2>
+<h3 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-1-adim-yeni-bir-workflow-olustur">🔹 1. Adım: Yeni Bir Workflow Oluştur</h3>
+<ul><li>n8n paneline girin</li><li>Sol üstten <strong>“New Workflow”</strong> tıklayın</li><li>Workflow’un adını örneğin: <code>Form Bilgisi → Mail</code></li></ul>
+<hr />
+<h3 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-2-adim-webhook-node-u-ekle">🔹 2. Adım: Webhook Node’u Ekle</h3>
+<ol><li>“+” işaretine tıklayın  </li><li><strong>Webhook</strong> node’unu seçin  </li><li>Method: <code>POST</code> olarak ayarlayın  </li><li>Webhook URL’yi bir yere kopyalayın (örnek: Zapier gibi formlarda bu URL’ye gönderim yapacağız)</li></ol>
+<blockquote><p>Bu node, dışarıdan gelen form verisini alır.</p></blockquote>
+<hr />
+<h3 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-3-adim-email-node-u-ekle">🔹 3. Adım: Email Node’u Ekle</h3>
+<ol><li>“+” işaretine tıklayın  </li><li><strong>Email</strong> node’unu seçin (SMTP veya Gmail seçebilirsiniz)  </li><li>Ayarları doldur:</li></ol>
+<ul><li>Alıcı: kendi e-posta adresiniz</li><li>Konu: <code>Yeni Form Yanıtı</code></li><li>Gövde: webhook’tan gelen verileri yazın (örneğin <code>{{$json[&quot;isim&quot;]}} size mesaj gönderdi!</code>)</li></ul>
+<blockquote><p>Email node’unun webhook’tan gelen veriyi nasıl kullandığını göreceğiz.</p></blockquote>
+<hr />
+<h3 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-4-adim-node-lari-bagla">🔹 4. Adım: Node’ları Bağla</h3>
+<ul><li>Webhook → Email node’unu <strong>okla bağla</strong></li><li>Her iki node’un üstünde “Play” butonuna basarak test moduna geç.</li></ul>
+<hr />
+<h3 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-5-adim-test-et">🔹 5. Adım: Test Et</h3>
+<p>Webhook URL’yi kullanarak test verisi gönder (örneğin Postman veya bir form aracı kullanarak). Başarılıysa: e-posta adresinize bir mesaj gelmiş olacak! 🎉</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-bonus-basit-form-ornegi-html">🧪 Bonus: Basit Form Örneği (HTML)</h2>
+<p>Aşağıdaki formu kendi web sitenize koyarak test edebilirsiniz:</p>
+<pre><code>&lt;form action=&quot;WEBHOOK_URLINIZ&quot; method=&quot;post&quot;&gt;
+  &lt;input name=&quot;isim&quot; placeholder=&quot;Adınız&quot;&gt;
+  &lt;input name=&quot;email&quot; placeholder=&quot;E-posta&quot;&gt;
+  &lt;textarea name=&quot;mesaj&quot; placeholder=&quot;Mesajınız&quot;&gt;&lt;/textarea&gt;
+  &lt;button type=&quot;submit&quot;&gt;Gönder&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+</section>
+
+<section id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar" class="guide-doc">
+  <div class="chapter-tag">Temel</div>
+  <h2>n8n ile Otomasyon 4. Bölüm - Koşullar ve Akıllı Akışlar</h2>
+  <p>Artık otomasyon kurabiliyoruz. Şimdi işleri biraz daha zeki hale getirme zamanı. Her veri aynı değildir, bazen “şu olursa bunu yap, değilse yapma” demeliyiz. İşte şimdi bunu öğreneceğiz.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li><code>Set</code> node ile veri oluşturmayı ve düzenlemeyi  </li><li><code>IF</code> node ile koşul eklemeyi  </li><li><code>Switch</code> node ile çoklu yol oluşturmayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-set-node-benim-verim-bu">🔹 Set Node – “Benim Verim Bu!”</h2>
+<p><code>Set</code> node, sizin elle veri oluşturmanızı sağlar. Test amaçlı veya veri hazırlamak için çok kullanılır.</p>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-ornek-veri">Örnek Veri</h3>
+<pre><code>{
+  &quot;isim&quot;: &quot;Nefise&quot;,
+  &quot;puan&quot;: 85
+}</code></pre>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-yapilir">Nasıl Yapılır?</h3>
+<ol><li>“+” tuşuna tıklayın → <code>Set</code> node ekleyinyin  </li><li>Field Name: <code>isim</code>, Value: <code>&quot;Nefise&quot;</code>  </li><li>Field Name: <code>puan</code>, Value: <code>85</code>  </li><li>Çalıştırın ve node çıktısını inceleyin</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-if-node-sartli-akis-kur">🔸 IF Node – Şartlı Akış Kur</h2>
+<p>“Eğer puan 90’dan büyükse tebrik et, değilse farklı mesaj gönder.”</p>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-kurulur">Nasıl Kurulur?</h3>
+<ol><li>“+” tuşuna tıklayın → <code>IF</code> node ekleyinyin  </li><li>Koşul ekleyin:</li></ol>
+<ul><li>Field: <code>puan</code>  </li><li>Condition: <code>larger than</code>  </li><li>Value: <code>90</code>  </li></ul>
+<ol><li><code>True</code> ve <code>False</code> çıkışlarına göre farklı node’lar bağla</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-switch-node-coklu-secenekli-kontrol">🔻 Switch Node – Çoklu Seçenekli Kontrol</h2>
+<p>Birden fazla değere göre ayrım yapar. Örnek: Puan aralığına göre seviyelendirme.</p>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-kurulur">Nasıl Kurulur?</h3>
+<ol><li><code>Switch</code> node ekleyinyin  </li><li>Switch key: <code>puan</code>  </li><li>Aşağıdaki gibi değerleri sırayla girin:</li></ol>
+<ul><li>Case 1: <code>&lt;= 50</code> → &quot;Kaldın&quot;</li><li>Case 2: <code>&lt;= 75</code> → &quot;Geçtin&quot;</li><li>Case 3: <code>&lt;= 100</code> → &quot;Harika!&quot;</li></ul>
+<p>Her çıkışa farklı aksiyonlar bağlanabilir.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-mini-gorev-otomatik-tebrik-sistemi">🎯 Mini Görev: Otomatik Tebrik Sistemi</h2>
+<p>Senaryo: Öğrenci formu doldurdu, puan alanına göre ona otomatik mesaj gidiyor.</p>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-kullanilacak-node-lar">Kullanılacak Node&#39;lar</h3>
+<ul><li><code>Set</code> → puanı 92 olarak ayarlayın  </li><li><code>IF</code> → <code>puan &gt; 90</code> kontrolü  </li><li><code>Telegram</code> →  </li><li><code>True</code>: “Tebrikler! 🎉”  </li><li><code>False</code>: “Devam edin, daha iyisini yaparsınız!”</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li><code>Set</code> ile örnek veri oluşturduk  </li><li><code>IF</code> ile veri içeriğine göre koşul ekledik  </li><li><code>Switch</code> ile birden fazla senaryo için dallanma yaptık  </li><li>Otomasyonumuzu daha zeki hale getirdik</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-5-bolum-web-den-veri-cekmek-http-request-ile-dis-dunya-ile-konus">5. Bölüm: Web’den Veri Çekmek – <code>HTTP Request</code> ile Dış Dünya ile Konuş!</h3>
+<p>Hava durumu, döviz kuru, Google API&#39;leri, başka sistemlerle veri alışverişi nasıl yapılır? Artık otomasyon sadece kendi içinde değil, dış dünya ile bağlantılı!</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request" class="guide-doc">
+  <div class="chapter-tag">Temel</div>
+  <h2>n8n ile Otomasyon 5. Bölüm - Web&#39;den Veri Çekmek (`HTTP Request`)</h2>
+  <p>Artık kendi otomasyonlarımızı kurabiliyoruz, koşullar ekledik, dallandık… Şimdi sıra geldi dış dünyaya ulaşmaya: Web sitelerinden, API&#39;lardan veri çekmek!</p>
+<p>Ve bu işin sihirli anahtarı: <code>HTTP Request</code> node.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li><code>HTTP Request</code> node nedir, ne işe yarar?  </li><li>Basit bir API&#39;den veri nasıl çekilir?  </li><li>Gelen veriyi nasıl kullanırız?  </li><li><code>JSON</code> verileri n8n içinde nasıl işleriz?</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-http-request-node-nedir">🔹 <code>HTTP Request</code> Node Nedir?</h2>
+<p>İnternetteki herhangi bir API’ye bağlanmanı sağlar.</p>
+<p><strong>Örnek senaryolar:</strong></p>
+<ul><li>Hava durumu bilgisi çek  </li><li>Döviz kuru al  </li><li>Bir web formuna veri gönder  </li><li>Google Sheet API’sine bağlan</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-ornek-hava-durumunu-cekmek">🛠 Örnek: Hava Durumunu Çekmek</h2>
+<p>Biz şimdi ücretsiz bir hava durumu API’sinden veri çekeceğiz: https://api.weatherapi.com</p>
+<h3 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-1-api-key-al">1. API Key Al</h3>
+<ol><li>https://www.weatherapi.com/ adresine gidin  </li><li>Ücretsiz hesap oluştur  </li><li>API Key’inizi kopyalayın (örnek: <code>abc123xyz456</code>)</li></ol>
+<h3 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-2-http-request-node-u-olustur">2. <code>HTTP Request</code> Node’u Oluştur</h3>
+<ol><li>“+” tıklayın → <code>HTTP Request</code> seçin  </li><li>Ayarları yap:</li></ol>
+<ul><li>Method: <code>GET</code>  </li><li>URL:  </li></ul>
+<pre><code>https://api.weatherapi.com/v1/current.json?key=APIKEYINIZ&amp;q=Istanbul</code></pre>
+<blockquote><p><code>APIKEYINIZ</code> kısmını kendi anahtarınla değiştir!</p></blockquote>
+<ol><li>Request’i test et → sağda <code>JSON</code> olarak veri gelecek.</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-ornek-veri-yaniti">🧪 Örnek Veri Yanıtı</h2>
+<pre><code>{
+  &quot;location&quot;: {
+    &quot;name&quot;: &quot;Istanbul&quot;,
+    &quot;country&quot;: &quot;Turkey&quot;
+  },
+  &quot;current&quot;: {
+    &quot;temp_c&quot;: 23.0,
+    &quot;condition&quot;: {
+      &quot;text&quot;: &quot;Partly cloudy&quot;
+    }
+  }
+}</code></pre>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-veriyi-kullanmak">🔎 Bu Veriyi Kullanmak</h2>
+<p>Bir sonraki node’da bu veriyi nasıl kullanacağını öğrenelim. Örneğin <code>Telegram</code> node&#39;una şu mesajı yazın:</p>
+<pre><code>İstanbul’da hava durumu: {{$json[&quot;current&quot;][&quot;condition&quot;][&quot;text&quot;]}}  
+Sıcaklık: {{$json[&quot;current&quot;][&quot;temp_c&quot;]}}°C</code></pre>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-mini-gorev-gunluk-hava-durumu-botu">👨‍🔬 Mini Görev: Günlük Hava Durumu Botu</h2>
+<ol><li><code>Cron</code> → Her sabah saat 08:00  </li><li><code>HTTP Request</code> → Hava durumu verisini al  </li><li><code>Telegram</code> → Kullanıcıya mesaj gönder</li></ol>
+<p>Bitti! Artık her sabah güncel hava durumu cebinde. ☀️🌧️❄️</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li><code>HTTP Request</code> ile dış kaynaklardan veri almayı  </li><li>JSON verisini n8n içinde kullanmayı  </li><li>API mantığını kavramayı  </li><li>Gerçek veriyle çalışan otomasyon kurmayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-6-bolum-webhook-larla-disaridan-veri-almak-gercek-zamanli-otomasyonlar">6. Bölüm: Webhook’larla Dışarıdan Veri Almak – Gerçek Zamanlı Otomasyonlar</h3>
+<p>Webhook sayesinde başka sistemlerden gelen veriyi <strong>anlık</strong> olarak yakalayacağız. Bir form gönderildiğinde, bir butona basıldığında sistem otomatik çalışacak!</p>
+<hr />
+</section>
+
+<section id="entegrasyonlar" class="module-divider">
+  <div class="kicker">Entegrasyon</div>
+  <h2>Gerçek Entegrasyonlar</h2>
+  <p>Google Sheets, Telegram ve uçtan uca mini proje akışı.</p>
+</section>
+
+<section id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak" class="guide-doc">
+  <div class="chapter-tag">Entegrasyon</div>
+  <h2>n8n ile Otomasyon 6. Bölüm - Webhook ile Gerçek Zamanlı Veri Almak</h2>
+  <p>Bir kullanıcı form gönderdiğinde… Bir başka sistem bize veri yolladığında… Biz n8n ile bu veriyi <strong>anında</strong> yakalayabiliriz.</p>
+<p>İşte bu iş için sihirli araç: <code>Webhook</code> node.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li><code>Webhook</code> node nedir ve nasıl çalışır?  </li><li>Web&#39;den gelen veriyi nasıl alırız?  </li><li>Form ya da başka sistemlerle nasıl entegre ederiz?  </li><li><code>Webhook</code> ile anlık aksiyon nasıl kurulur?</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-webhook-nedir">🔹 Webhook Nedir?</h2>
+<p>Webhook, dış sistemlerden gelen veriyi <strong>anlık</strong> olarak yakalayan bir kapıdır.</p>
+<p>Webhook node, size özel bir URL oluşturur. Bir sistem bu URL’ye veri gönderirse, n8n otomatik olarak tetiklenir.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-webhook-kurulumu">🛠 Webhook Kurulumu</h2>
+<h3 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-1-webhook-node-u-ekle">1. Webhook Node&#39;u Ekle</h3>
+<ol><li>“+” tıklayın → <code>Webhook</code> node seçin  </li><li>Ayarları yap:  </li></ol>
+<ul><li>HTTP Method: <code>POST</code>  </li><li>Path: <code>ornek-form</code> (bu URL’nin son kısmı olur)</li></ul>
+<h3 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-2-test-moduna-al">2. Test Moduna Al</h3>
+<p>Node’un sağ üstünden <code>Execute Node</code>’a tıklayın Bu, gelen veriyi dinlemeye başlar</p>
+<h3 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-3-webhook-url-yi-kopyala">3. Webhook URL’yi Kopyala</h3>
+<p>Sağ üstte <code>Test URL</code> gözükecek  Örn:</p>
+<pre><code>https://n8n.app.n8n.cloud/webhook-test/ornek-form</code></pre>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-basit-html-form-ile-test">🧪 Basit HTML Form ile Test</h2>
+<p>Aşağıdaki kodu kendi sitene ya da CodePen’e yapıştırın:</p>
+<pre><code>&lt;form action=&quot;https://n8n.app.n8n.cloud/webhook-test/ornek-form&quot; method=&quot;post&quot;&gt;
+  &lt;input name=&quot;isim&quot; placeholder=&quot;Adınız&quot;&gt;
+  &lt;input name=&quot;email&quot; placeholder=&quot;E-posta&quot;&gt;
+  &lt;button type=&quot;submit&quot;&gt;Gönder&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>Formu doldur → Gönder → n8n&#39;de veri yakalanır ✅</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-otomasyonu-tamamla">🔁 Otomasyonu Tamamla</h2>
+<p>Webhook ile veri geldi. Şimdi bu veriye tepki verelim:</p>
+<ul><li>Webhook → E-posta (form içeriğini gönder)  </li><li>Webhook → Telegram (bildirim yolla)  </li><li>Webhook → Google Sheet (veriyi kaydedin)</li></ul>
+<p>Senaryo sınırsız!</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-mini-gorev-form-e-posta-otomasyonu">👨‍🔬 Mini Görev: Form → E-posta Otomasyonu</h2>
+<ol><li>Webhook: Form verisini yakala  </li><li>Email node:  </li></ol>
+<p>``<code> Ad: {{$json[&quot;isim&quot;]}} E-posta: {{$json[&quot;email&quot;]}} </code>``</p>
+<ul><li>To: kendi e-postan  </li><li>Subject: <code>Yeni Form Yanıtı</code>  </li><li>Body:  </li></ul>
+<p>Bitti. Artık biri form gönderince otomatik e-posta alıyorsunuz 🎉</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li><code>Webhook</code> ile dış sistemlerden gelen veriyi almayı  </li><li>Gerçek zamanlı otomasyon kurmayı  </li><li>HTML form → n8n entegrasyonunu  </li><li>Veri geldikçe otomatik aksiyon almayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-7-bolum-google-sheets-ile-otomasyon-veri-ekle-oku-guncelle">7. Bölüm: Google Sheets ile Otomasyon – Veri Ekle, Oku, Güncelle</h3>
+<p>Form verisini Sheets’e kaydetmek, veriye göre satır eklemek, filtreleme yapmak... n8n ile Google Sheets arasında sihirli bir bağ kuracağız!</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon" class="guide-doc">
+  <div class="chapter-tag">Entegrasyon</div>
+  <h2>n8n ile Otomasyon 7. Bölüm - Google Sheets ile Otomasyon</h2>
+  <p>Artık webhook&#39;larla dışarıdan veri alabiliyoruz. Şimdi bu verileri saklamak için mükemmel bir yer olan Google Sheets’e bağlanıyoruz.</p>
+<p>Google Sheets, otomasyonların defteri gibidir: Veri ekleriz, güncelleriz, sileriz, okuruz. Hepsi mümkün.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li>n8n ile Google Sheets bağlantısı nasıl kurulur  </li><li>Yeni veri nasıl eklenir  </li><li>Var olan veri nasıl okunur veya güncellenir  </li><li>En sık kullanılan senaryolar</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-on-hazirlik-google-sheets-api-baglantisi">🔐 Ön Hazırlık: Google Sheets API Bağlantısı</h2>
+<p>Google hesabınızı n8n’e bağlaman gerekiyor.</p>
+<h3 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-1-google-hesabini-bagla">1. Google Hesabını Bağla</h3>
+<ol><li>n8n panelinde <code>Credentials</code> → <code>Google Sheets</code> → <code>New</code>  </li><li>“Sign in with Google” ile hesabınızı bağlayın  </li><li>Yetkileri onaylayın → Artık Google Sheets node’larını kullanabilirsiniz</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-ornek-senaryo-form-verisini-sheets-e-kaydet">🛠 Örnek Senaryo: Form Verisini Sheets’e Kaydet</h2>
+<ol><li>Webhook ile form verisini al  </li><li>Google Sheets node ekleyinyin: <code>Append Sheet Row</code></li></ol>
+<h3 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-ayarlar">Ayarlar:</h3>
+<ul><li>Drive: <code>My Drive</code>  </li><li>Spreadsheet ID: Google Sheet dokümanının linkinden alabilirsiniz  </li><li>Sheet Name: Örn. <code>FormVerileri</code>  </li><li>Columns: <code>isim</code>, <code>email</code></li></ul>
+<blockquote><p>Webhook’tan gelen verileri bu sütunlara eşleştir:  </p><p><code>{{$json[&quot;isim&quot;]}}</code>, <code>{{$json[&quot;email&quot;]}}</code></p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-diger-google-sheets-islemleri">🔄 Diğer Google Sheets İşlemleri</h2>
+<table><thead><tr><th>Node Tipi</th><th>Açıklama</th></tr></thead><tbody><tr><td>Append Sheet Row</td><td>Yeni satır ekler (en sık kullanılan)</td></tr><tr><td>Update Sheet Row</td><td>Belirli bir satırı günceller</td></tr><tr><td>Read Sheet Row(s)</td><td>Veri okur (filtreleme yapabilir)</td></tr><tr><td>Delete Sheet Row</td><td>Satır siler</td></tr><tr><td>Lookup Sheet Row</td><td>Değer arar (örneğin e-posta ile eşleşen satır)</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-mini-gorev-katilim-listesi-olustur">👨‍🔬 Mini Görev: Katılım Listesi Oluştur</h2>
+<ol><li>Google Sheet’te şu başlıklarla bir tablo oluştur:  </li></ol>
+<ul><li><code>Ad Soyad</code>  </li><li><code>E-posta</code>  </li><li><code>Kayıt Tarihi</code></li></ul>
+<ol><li>n8n’de:</li></ol>
+<ul><li>Webhook: formdan veri al  </li><li>Google Sheets: <code>Append Sheet Row</code>  </li><li>Verileri karşılık gelen hücrelere yazın</li></ul>
+<p>Artık her kayıt otomatik olarak tabloya ekleniyor ✅</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li>Google Sheets ile n8n bağlantısı kurmayı  </li><li>Form verilerini Sheets’e otomatik eklemeyi  </li><li>En sık kullanılan Sheets node’larını  </li><li>Kayıt tutma, güncelleme ve veri okuma otomasyonlarınızı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-8-bolum-telegram-ile-bildirim-gonderme-akilli-uyari-sistemi-kur">8. Bölüm: Telegram ile Bildirim Gönderme – Akıllı Uyarı Sistemi Kur</h3>
+<p>Yeni kayıt olunduğunda, hata olduğunda veya belirli bir eşik aşıldığında size anında Telegram mesajı gönderen sistem kuracağız. Haberin olacak, ama işiniz bölünmeyecek! 📲</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur" class="guide-doc">
+  <div class="chapter-tag">Entegrasyon</div>
+  <h2>n8n ile Otomasyon 8. Bölüm - Telegram ile Otomatik Bildirim Sistemi Kur</h2>
+  <p>Veriyi aldık, sakladık... Peki haberdar oluyor muyuz? Bir kayıt eklendiğinde, hata oluştuğunda, belirli bir koşul sağlandığında n8n bize anında mesaj gönderebilir.</p>
+<p>Ve bu işi en iyi Telegram yapar: Hem hızlı, hem ücretsiz, hem de mobilde çok pratik!</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li>Telegram botu nasıl oluşturulur  </li><li>Telegram botu n8n’e nasıl bağlanır  </li><li>n8n’den Telegram’a mesaj nasıl gönderilir  </li><li>Kayıt, uyarı veya bilgilendirme senaryoları nasıl kurulur</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-telegram-botu-nasil-olusturulur">🤖 Telegram Botu Nasıl Oluşturulur?</h2>
+<ol><li>Telegram’da <code>@BotFather</code> kullanıcısını bul  </li><li><code>/newbot</code> yazın → bot’a bir isim ve kullanıcı adı verin  </li><li>size bir <code>Bot Token</code> verecek → bunu kopyalayın</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-botu-n8n-e-bagla">🔐 Botu n8n’e Bağla</h2>
+<ol><li>n8n panelinde <code>Credentials</code> → <code>Telegram</code> → <code>New</code>  </li><li><code>Bot Token</code> kısmına yukarıda aldığınız token’ı yapıştırın  </li><li>Kaydet → Artık Telegram node’ları aktif!</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-ornek-yeni-kayit-geldiginde-telegram-dan-bildirim-gonder">🛠 Örnek: Yeni Kayıt Geldiğinde Telegram’dan Bildirim Gönder</h2>
+<ol><li>Webhook veya Google Sheets → veriyi al  </li><li>Telegram node ekleyinyin: <code>Send Message</code></li></ol>
+<h3 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-ayarlar">Ayarlar:</h3>
+<ul><li><strong>Chat ID</strong>: Kendi Telegram ID’n (test için <code>@useradınız</code> veya grup adı)  </li><li><strong>Message</strong>:</li></ul>
+<pre><code>Yeni kayıt geldi!  
+Ad: {{$json[&quot;isim&quot;]}}  
+E-posta: {{$json[&quot;email&quot;]}}</code></pre>
+<ol><li>Node’ları birbirine bağlayın → workflow’u test et!</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-mini-gorev-uyari-sistemi-kur">👨‍🔬 Mini Görev: Uyarı Sistemi Kur</h2>
+<p>Senaryo: Eğer gelen formdaki “puan” değeri 50’nin altındaysa, Telegram’dan uyarı gelsin.</p>
+<ol><li>Webhook → form verisini al  </li><li>IF node → <code>puan &lt; 50</code> kontrolü  </li><li>TRUE yoluna Telegram ekleyin  </li><li>Mesaj: <code>&quot;Uyarı: Düşük puanlı kayıt geldi → {{$json[&quot;isim&quot;]}}&quot;</code></li></ol>
+<p>Bu kadar basit. Artık kritik olaylardan anında haberdarsınız. 📲</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li>Telegram bot oluşturmayı  </li><li>Botu n8n’e bağlamayı  </li><li>Otomatik mesajlar göndermeyi  </li><li>Form veya koşul bazlı bildirim sistemleri kurmayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-9-bolum-n8n-i-gercek-bir-projeye-donusturmek-uctan-uca-mini-sistem-kurulumu">9. Bölüm: n8n’i Gerçek Bir Projeye Dönüştürmek – Uçtan Uca Mini Sistem Kurulumu</h3>
+<p>Şimdi öğrendiklerimizi birleştiriyoruz: Form → Sheets → Kontrol → Bildirim zinciriyle çalışan gerçek bir proje otomasyonu kuracağız. Yani: İlk mini ürünümüz geliyor! 🚀</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje" class="guide-doc">
+  <div class="chapter-tag">Entegrasyon</div>
+  <h2>n8n ile Otomasyon 9. Bölüm - Gerçek Bir Proje</h2>
+  <p>Form → Sheets → Kontrol → Bildirim</p>
+<p>Artık parçaları öğrendik. Şimdi sıra geldi <strong>mini bir sistem kurmaya</strong>. Yani, kullanıcı formu dolduracak → veri Google Sheets&#39;e kaydedilecek → kontrol edilecek → gerekiyorsa Telegram’dan mesaj gönderilecek.</p>
+<p>Bu otomasyon gerçek dünyada:</p>
+<ul><li>Başvuru formları</li><li>Eğitim kayıtları</li><li>Satın alma bildirimleri</li><li>Destek talepleri gibi durumlarda kullanılır.</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-bu-projenin-akisi-nasil">🎯 Bu Projenin Akışı Nasıl?</h2>
+<ol><li>Kullanıcı bir form doldurur  </li><li>Webhook node veriyi alır  </li><li>IF node ile kontrol yapılır (örn: puan &lt; 50 mi?)  </li><li>Google Sheets node ile veriler kaydedilir  </li><li>Gerekirse Telegram node ile bildirim gönderilir</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-kullanilacak-node-lar">🧩 Kullanılacak Node&#39;lar</h2>
+<table><thead><tr><th>Node</th><th>Görev</th></tr></thead><tbody><tr><td>Webhook</td><td>Formdan gelen veriyi alır</td></tr><tr><td>IF</td><td>Puan kontrolü yapar</td></tr><tr><td>Google Sheets</td><td>Veriyi saklar</td></tr><tr><td>Telegram</td><td>Düşük puan varsa bildirim gönderir</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-adim-adim-kurulum">🛠 Adım Adım Kurulum</h2>
+<h3 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-1-webhook-node">1. Webhook Node</h3>
+<ul><li>Method: <code>POST</code>  </li><li>Path: <code>kayit-formu</code>  </li><li>Test modunda çalıştır ve formdan veri gönder</li></ul>
+<h3 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-2-if-node">2. IF Node</h3>
+<ul><li>Koşul: <code>puan &lt; 50</code>  </li><li>True → Telegram  </li><li>False → Devam</li></ul>
+<h3 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-3-telegram-node-opsiyonel-uyari">3. Telegram Node (Opsiyonel Uyarı)</h3>
+<ul><li>Chat ID: kendi kullanıcı adınız veya test grubunuz  </li><li>Mesaj:</li></ul>
+<pre><code>Uyarı! Düşük puanlı kayıt geldi: {{$json[&quot;isim&quot;]}} – {{$json[&quot;puan&quot;]}}</code></pre>
+<h3 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-4-google-sheets-node">4. Google Sheets Node</h3>
+<ul><li>Eylem: <code>Append Sheet Row</code>  </li><li>Spreadsheet ID ve Sheet adı girin  </li><li>Verileri şu şekilde eşleştir:</li><li>isim → <code>{{$json[&quot;isim&quot;]}}</code>  </li><li>email → <code>{{$json[&quot;email&quot;]}}</code>  </li><li>puan → <code>{{$json[&quot;puan&quot;]}}</code>  </li><li>tarih → <code>{{$now}}</code></li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-test-zamani">🧪 Test Zamanı</h2>
+<p>Formu doldur → veriyi gönder →</p>
+<ul><li>Google Sheet’e satır eklendi mi?  </li><li>Puan &lt; 50 ise Telegram uyarısı geldi mi?</li></ul>
+<p>Çalışıyorsa, artık sizin bir otomasyon sisteminiziz var! 🎯</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li>Tekil node’ları projeye dönüştürmeyi  </li><li>Adım adım çalışan zincir kurmayı  </li><li>Veri akışı kontrolü, kayıt ve bildirim entegrasyonunu  </li><li>Gerçek hayat senaryosunda n8n kullanmayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-9-bolum-gercek-bir-proje-10-bolum-n8n-workflow-larini-yayinlama-ve-paylasma">10. Bölüm: n8n Workflow’larını Yayınlama ve Paylaşma</h3>
+<p>Kurduğunuz sistemleri başkalarıyla paylaşmak, farklı projelerde tekrar kullanmak veya versiyonlamak mümkün. Sonraki bölümde export, import ve paylaşım özelliklerini keşfedeceğiz.</p>
+<hr />
+</section>
+
+<section id="yonetim" class="module-divider">
+  <div class="kicker">Yönetim</div>
+  <h2>Paylaşım, Hata Yönetimi ve API</h2>
+  <p>Workflow dışa aktarma, hata okuma ve API mantığını sahada kullanma.</p>
+</section>
+
+<section id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek" class="guide-doc">
+  <div class="chapter-tag">Yönetim</div>
+  <h2>n8n ile Otomasyon 10. Bölüm - Workflow’ları Paylaşmak, Dışa Aktarmak ve Geri Yüklemek</h2>
+  <p>Kurduğunuz sistem güzel çalışıyor ama ya başka biriyle paylaşmak isterseniz? Ya da sisteminizin yedeğini alıp başka bir projeye aktarmak?</p>
+<p>İşte bu bölümde n8n’in dışa aktarma (export), içe aktarma (import) ve paylaşım özelliklerini öğreneceğiz.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li>Workflow nasıl dışa aktarılır (JSON olarak)  </li><li>Dışa aktarılan workflow nasıl başka bir projeye eklenir  </li><li>Reusable (tekrar kullanılabilir) yapılar nasıl oluşturulur  </li><li>Public paylaşım mümkün mü?</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-disa-aktarmak-export">📤 Workflow Dışa Aktarmak (Export)</h2>
+<ol><li>Workflow sayfasına girin  </li><li>Sağ üst köşede <code>...</code> (üç nokta) simgesine tıklayın  </li><li>“Download” veya “Export” seçeneğine tıklayın  </li><li>Bir <code>.json</code> dosyası iner  </li></ol>
+<ul><li>Bu dosya tüm node’ları, bağlantıları ve ayarları içerir</li></ul>
+<blockquote><p>Bu dosya, sisteminiz bir kopyasıdır. Paylaşmak, yedeklemek veya taşımak için kullanılır.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-ice-aktarmak-import">📥 Workflow İçe Aktarmak (Import)</h2>
+<ol><li>n8n panelinde <code>Workflows</code> sekmesine gel  </li><li>Sağ üstte <code>+</code> tuşuna basın  </li><li>“Import from File” ya da “Import from Clipboard” seçin  </li><li>Daha önce indirdiğiniz <code>.json</code> dosyasını yükleyin</li></ol>
+<p>Boom! Tüm yapı geri gelir 🔄</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-reusable-akislar-alt-workflow-lar">🔁 Reusable Akışlar (Alt Workflow’lar)</h2>
+<p>Bazı işlemleri birçok farklı yerde tekrar kullanmak isteyebilirsin. Örneğin:</p>
+<ul><li>E-posta şablonu  </li><li>Uyarı sistemi  </li><li>Dosya kaydetme adımı</li></ul>
+<p>Bunları ayrı workflow olarak kaydedip <code>Execute Workflow</code> node ile çağırabilirsin.</p>
+<h3 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-nasil">Nasıl?</h3>
+<ol><li>Bir akışı “Reusable” olarak tasarla  </li><li>Başka bir akışta <code>Execute Workflow</code> node ekleyinyin  </li><li>Çağrılacak workflow’u seçin  </li><li>Girdi/çıktı parametrelerini tanımla (JSON objesi olarak)</li></ol>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-paylasimi">🌍 Workflow Paylaşımı</h2>
+<p>Şu anda n8n’in “public link” ile paylaşım özelliği yok. Ama JSON dosyasını istediğiniz kişiyle paylaşabilirsin.</p>
+<blockquote><p>Ayrıca kendi “n8n template” kütüphaneni oluşturabilir, projelerini arşivleyebilirsin.</p></blockquote>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-mini-gorev-kendi-otomasyonunu-yedekle">👨‍🔬 Mini Görev: Kendi Otomasyonunu Yedekle</h2>
+<ol><li>Son oluşturduğunuz projeyi <code>.json</code> olarak dışa aktar  </li><li>Dosyayı bir klasörde saklayın  </li><li>Yeni bir n8n hesabı aç → workflow’u içe aktar  </li><li>Aynı sisteminiz başka ortamda çalıştığını gör</li></ol>
+<p>Harika, artık sistemleriniz yedekli!</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li>Workflow dışa ve içe aktarmayı  </li><li>Otomasyonları paylaşmayı ve yedeklemeyi  </li><li>Reusable sistemler kurmayı  </li><li>Uzun vadede sürdürülebilir otomasyon altyapısı oluşturmayı</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-11-bolum-n8n-de-hata-yonetimi-ve-log-lari-okuma">11. Bölüm: n8n’de Hata Yönetimi ve Log’ları Okuma</h3>
+<p>Workflow’un çalışmadığında nedenini nasıl bulursun? Hangi node’da ne hata verdi, neden veri gelmedi? Tüm bunların cevabını sistem içi log’larda bulacağız. Artık “debug” zamanı!</p>
+<hr />
+</section>
+
+<section id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging" class="guide-doc">
+  <div class="chapter-tag">Yönetim</div>
+  <h2>n8n ile Otomasyon 11. Bölüm - Hata Yönetimi ve Log’ları Okuma (Debugging)</h2>
+  <p>Otomasyonlar bazen çalışmaz. Bir node’da hata olur, veri eksik gelir ya da bağlantı kesilir. Ama endişeye gerek yok: n8n neyin nerede bozulduğunu size detaylı anlatır.</p>
+<p>Bu bölümde otomasyonlar çalışmazsa <strong>nasıl teşhis konur ve çözülür</strong>, onu öğreneceğiz.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-bu-bolumde-ne-ogrenecegiz">🎯 Bu Bölümde Ne Öğreneceğiz?</h2>
+<ul><li>Workflow hata verdiğinde nasıl anlaşılır  </li><li>Her node’un log verisi nereden okunur  </li><li>JSON çıktısı nasıl analiz edilir  </li><li>Tipik hata türleri nelerdir ve nasıl çözülür?</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-otomasyon-hata-verdiginde-ne-olur">🧨 Otomasyon Hata Verdiğinde Ne Olur?</h2>
+<p>Bir node başarısız olduğunda:</p>
+<ul><li>Workflow durur  </li><li>Hatalı node’un üzerinde kırmızı bir ❌ işareti belirir  </li><li>“Execution” geçmişinde hata detayları yer alır</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-log-lara-nasil-ulasilir">📜 Log’lara Nasıl Ulaşılır?</h2>
+<ol><li><code>Executions</code> sekmesine gidin  </li><li>Hatalı workflow çalışmasını bul  </li><li>Tıkla → node’ların geçmişi açılır  </li><li>Hatalı node’a tıklayın → sağda “Error” detayları görünür</li></ol>
+<p>Orada şu bilgiler olur:</p>
+<ul><li>Hata mesajı (örnek: “401 Unauthorized”)  </li><li>Hangi input ile çalıştı  </li><li>Hangi output bekleniyordu  </li><li>Stack trace (teknik detay)</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-json-incelemesi">🔍 JSON İncelemesi</h2>
+<p>Her node’un içindeki <code>Input</code> ve <code>Output</code> sekmelerinden JSON veriyi görebilirsiniz.</p>
+<p>Bu JSON içeriği sayesinde:</p>
+<ul><li>Hangi alan eksik gelmiş?  </li><li>Veri doğru formatta mı?  </li><li>Koşul doğru çalışıyor mu?</li></ul>
+<p>gibi detayları kontrol edebilirsiniz.</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-yaygin-hata-turleri-ve-cozumleri">⚠️ Yaygın Hata Türleri ve Çözümleri</h2>
+<table><thead><tr><th>Hata Türü</th><th>Açıklama ve Çözüm</th></tr></thead><tbody><tr><td>401 Unauthorized</td><td>API anahtarın hatalı → Credentials’i kontrol edin</td></tr><tr><td>404 Not Found</td><td>URL yanlış → Endpoint’i kontrol edin</td></tr><tr><td>500 Internal Error</td><td>Sunucu taraflı hata → API sağlayıcısına bağlı olabilir</td></tr><tr><td>Empty Output</td><td>Veri gelmedi → Input JSON’u kontrol edin</td></tr><tr><td>Expression Error</td><td><code>{{$json[&quot;alan&quot;]}}</code> ifadesinde alan eksik</td></tr></tbody></table>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-ipucu-workflow-u-safe-mode-da-calistirmak">🧰 İpucu: Workflow&#39;u “Safe Mode”da Çalıştırmak</h2>
+<p>Bir workflow’u node node çalıştırmak istiyorsanız:</p>
+<ul><li>Her node’u tek tek “Execute Node” ile çalıştır  </li><li>Böylece hangi adımda bozulduğunu izleyebilirsin  </li><li>Büyük akışlarda adım adım ilerlemek daha güvenlidir</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-mini-gorev-bilincli-hata-testi">👨‍🔬 Mini Görev: Bilinçli Hata Testi</h2>
+<ol><li><code>HTTP Request</code> node’una geçersiz bir URL yazın  </li><li>Çalıştırın  </li><li>Oluşan hatayı “Executions” panelinden inceleyin  </li><li>Stack trace, status code ve JSON detayını okuyun</li></ol>
+<p>Bu test sayesinde n8n’in hata yönetimini canlı olarak göreceksiniz</p>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-bu-bolumde-ne-ogrendik">🧠 Bu Bölümde Ne Öğrendik?</h2>
+<ul><li>Hatalı node’ları nasıl buluruz  </li><li>JSON input/output nasıl analiz edilir  </li><li>En yaygın hata mesajları nelerdir  </li><li>n8n’de debugging alışkanlığı nasıl geliştirilir</li></ul>
+<hr />
+<h2 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-siradaki-bolumde-ne-var">👀 Sıradaki Bölümde Ne Var?</h2>
+<h3 id="n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-12-bolum-n8n-workflow-larini-zamanlamak-cron-ile-otomatik-tetikleme">12. Bölüm: n8n Workflow&#39;larını Zamanlamak – Cron ile Otomatik Tetikleme</h3>
+<p>Bazı işler kullanıcıdan tetiklenmez. Her sabah 09:00’da çalışan sistemler, haftalık raporlar, aylık yedekleme gibi görevler için “Cron” kullanacağız.</p>
+<p>Artık otomasyonlar kendi kendine çalışacak! 🕘⏰</p>
+<hr />
+</section>
+
+<section id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi" class="guide-doc">
+  <div class="chapter-tag">Yönetim</div>
+  <h2>API’lerin Sihirli Dünyası - n8n ile Adım Adım Otomasyon Rehberi</h2>
+  <p>Bu sayfa, API kavramını sıfırdan öğrenmek isteyenler için hazırlanmıştır. Teknik terimlere boğulmadan, sade ve anlaşılır bir dille anlatılmıştır. Başlayalım.</p>
+<hr />
+<h2 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-api-nedir">🔧 API Nedir?</h2>
+<p><strong>API (Application Programming Interface)</strong>, iki yazılımın birbiriyle iletişim kurmasını sağlayan bir &quot;aracı&quot;dır.</p>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-gunluk-hayattan-ornek">🍕 Günlük Hayattan Örnek:</h3>
+<ul><li>Siz restorana gittiniz.</li></ul>
+<ul><li>Garsona &quot;bir pizza&quot; dediniz.</li></ul>
+<ul><li>Garson mutfağa gidip pizzanızı size getirdi.</li></ul>
+<p>Burada:</p>
+<ul><li><strong>siz</strong> = Kullanıcı</li></ul>
+<ul><li><strong>Garson</strong> = API</li></ul>
+<ul><li><strong>Mutfak</strong> = Sistem</li></ul>
+<p>Garson (API) olmasaydı, Siz mutfağa girip işi kendiniz yapacaktınız. İşte API’ler, sistemler arasında bu işleri halleden &quot;garsonlardır&quot;.</p>
+<hr />
+<h2 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-n8n-api-leri-nasil-kullanir">🤖 n8n API’leri Nasıl Kullanır?</h2>
+<p>n8n, hazır &quot;garsonlar&quot; (node’lar) sunar. Bu node’lar, API&#39;lerle konuşur.</p>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ornek-senaryo">🔁 Örnek Senaryo:</h3>
+<blockquote><p><strong>“Stripe’tan ödeme gelince, Philips Hue ışığını yak.”</strong></p></blockquote>
+<ul><li>Stripe Trigger node&#39;u → API ile Stripe&#39;tan gelen ödemeyi algılar</li></ul>
+<ul><li>Philips Hue node&#39;u → API ile ışık sisteminize komut gönderir</li></ul>
+<p>Bu işlemin <strong>hiçbir satır kod yazmadan</strong> gerçekleşmesini sağlar.</p>
+<hr />
+<h2 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-api-turleri">🧱 API Türleri</h2>
+<p>Aşağıda yaygın API türleri ve n8n’de nasıl kullanıldıkları özetlenmiştir:</p>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-1-rest-api">1. <strong>REST API</strong></h3>
+<ul><li>En yaygın kullanılan API türüdür.</li></ul>
+<ul><li>Genelde veri çekme, ekleme, silme gibi işlemler yapılır.</li></ul>
+<ul><li>n8n&#39;deki çoğu node REST API kullanır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-2-webhook">2. <strong>Webhook</strong></h3>
+<ul><li>Bir olay gerçekleştiğinde sizi bilgilendirir.</li></ul>
+<ul><li>Örnek: Bir form doldurulunca tetiklenir.</li></ul>
+<ul><li>n8n’de Trigger node’lar bu mantıkla çalışır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-3-graphql">3. <strong>GraphQL</strong></h3>
+<ul><li>Facebook tarafından geliştirilmiştir.</li></ul>
+<ul><li>Yalnızca ihtiyaç duyulan veriyi sorgular.</li></ul>
+<ul><li>n8n’de GraphQL node’u ile kullanılır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-4-sse-server-sent-events">4. <strong>SSE (Server-Sent Events)</strong></h3>
+<ul><li>Sunucudan istemciye sürekli veri akışı sağlar.</li></ul>
+<ul><li>Canlı skor, haber yayını gibi durumlarda kullanılır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-5-soap-api">5. <strong>SOAP API</strong></h3>
+<ul><li>Daha eski ve ciddi kurumsal sistemlerde görülür.</li></ul>
+<ul><li>XML kullanır.</li></ul>
+<ul><li>n8n’de XML node ile JSON/XML dönüşümü yapılır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-6-websocket-api">6. <strong>WebSocket API</strong></h3>
+<ul><li>Çift yönlü, gerçek zamanlı iletişim sağlar.</li></ul>
+<ul><li>Oyunlar, sohbet uygulamaları gibi sistemlerde kullanılır.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-7-grpc-api">7. <strong>gRPC API</strong></h3>
+<ul><li>Google tarafından geliştirilmiştir.</li></ul>
+<ul><li>Mikroservisler arasında hızlı ve verimli iletişim sağlar.</li></ul>
+<hr />
+<h2 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ozetle">📌 Özetle</h2>
+<ul><li><strong>API</strong>, yazılımların birbiriyle konuşmasını sağlar.</li></ul>
+<ul><li><strong>n8n</strong>, bu konuşmayı sizin yerinize yapan otomatik sistemdir.</li></ul>
+<ul><li>Kod bilmeden karmaşık iş akışları kurabilirsiniz.</li></ul>
+<h3 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ornek-otomasyon">🎯 Örnek Otomasyon:</h3>
+<blockquote><p>&quot;Instagram’da biri beni etiketleyince Google Sheets’e yazın, sonra bana Telegram’dan bildir.&quot;</p></blockquote>
+<p>Tüm bunlar n8n&#39;deki node&#39;lar sayesinde sadece birkaç tıklamayla yapılabilir.</p>
+<hr />
+<h2 id="api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-sonraki-adim">🛠️ Sonraki Adım</h2>
+<p>Hazırsanız şimdi kendi API tabanlı otomasyonunuzu kurmayı deneyebilirsiniz. İster hazır node’larla, ister webhook ile. İlk denemen için küçük bir proje önerisi:</p>
+<p><strong>&quot;Bir form doldurulunca e-posta gönder!&quot;</strong> ➡️ Webhook Trigger + Gmail Node</p>
+<p>Devam etmek ister misiniz? Bir sonraki rehberde webhook kurmayı göstereceğim. 👇</p>
+</section>
+
+<section id="auth" class="module-divider">
+  <div class="kicker">Auth</div>
+  <h2>Authentication Rehberi</h2>
+  <p>OAuth, API key ve sık kullanılan servis bağlantıları.</p>
+</section>
+
+<section id="bonus-1-n8n-ile-otomasyon-authentication" class="guide-doc">
+  <div class="chapter-tag">Auth</div>
+  <h2>BONUS 1 - n8n İle Otomasyon - Authentication</h2>
+  <h3 id="bonus-1-n8n-ile-otomasyon-authentication-1-authentication-nedir">1. Authentication nedir?</h3>
+<p>“Authentication” demek, <strong>kimliğinizi kanıtlamak</strong> demek. Tıpkı bir kapıyı açmak için anahtar kullanmaya benzer. Siz kim olduğunuzu kanıtlarsınız, sistem de size kapıyı açar.</p>
+<ul><li>Eğer içerik herkese açık (mesela google.com anasayfası), <strong>anahtar gerekmez</strong>.</li></ul>
+<ul><li>Ama özel bilgi istiyorsanız (mesela sizin Gmail hesabınıza bakmak), sistem der ki: <strong>“Önce bana kim olduğunuzu kanıtlayın.”</strong></li></ul>
+<hr />
+<h3 id="bonus-1-n8n-ile-otomasyon-authentication-2-n8n-de-bu-is-nasil-oluyor">2. n8n’de bu iş nasıl oluyor?</h3>
+<p>n8n bir <strong>yardımcı robot</strong> gibi çalışıyor. Siz ona “Bu servisten veri al” diyorsunuz. Robot da soruyor:   “Peki, bu servisin kapısını açacak <strong>anahtarı</strong> bana verecek misiniz?”</p>
+<p>İşte bu anahtar <strong>credentials</strong> oluyor. Yani kullanıcı adı–şifre, token ya da izin bağlantısı.</p>
+<hr />
+<h3 id="bonus-1-n8n-ile-otomasyon-authentication-3-kullanabileceginiz-anahtar-cesitleri">3. Kullanabileceğiniz Anahtar Çeşitleri</h3>
+<p>Kapı açmanın birkaç yolu var:</p>
+<ol><li><strong>Basic Auth (En basit yöntem)</strong></li></ol>
+<ul><li>Kullanıcı adı + şifre yazarsınız.</li></ul>
+<ul><li>Zayıf güvenlikli, ama eski sistemlerde işe yarar.</li></ul>
+<ol><li><strong>Bearer Token (Tek anahtar)</strong></li></ol>
+<ul><li>Servis size bir sihirli anahtar verir (token).</li></ul>
+<ul><li>n8n bu anahtarı her isteğe ekler.</li></ul>
+<ul><li>En kolay kullanılan yöntemdir.</li></ul>
+<ol><li><strong>Header Auth (Özel başlık)</strong></li></ol>
+<ul><li>Bazı servisler anahtarı özel bir isimle ister (ör. <code>X-API-Key</code>).</li></ul>
+<ul><li>n8n buna izin verir.</li></ul>
+<ol><li><strong>Query Auth (Linkin içine gömülen anahtar)</strong></li></ol>
+<ul><li>Anahtarı linkin sonuna ekler (<code>?apikey=12345</code>).</li></ul>
+<ul><li>Pek güvenli değil çünkü linki gören herkes anahtarı görür.</li></ul>
+<ol><li><strong>OAuth2 (En modern ve güvenli)</strong></li></ol>
+<ul><li>Siz n8n’e “Benim adıma Google’a bağlanabilirsin” dersiniz.</li></ul>
+<ul><li>Google sizi kendi ekranına yönlendirir, “Bu robota şu izinleri veriyor musunuz?” diye sorar.</li></ul>
+<ul><li>Siz onaylarsınız, Google n8n’e özel bir anahtar verir.</li></ul>
+<ul><li>Bu anahtar sayesinde n8n sizin yerinize işlem yapar.</li></ul>
+<ul><li>En büyük servisler (Google, Slack, Microsoft vb.) bu sistemi kullanır.</li></ul>
+<hr />
+<h3 id="bonus-1-n8n-ile-otomasyon-authentication-4-hangi-anahtari-secmeli">4. Hangi Anahtarı Seçmeli?</h3>
+<ul><li>Servis için <strong>hazır bir ayar varsa</strong> (mesela Airtable, Notion, Slack), onu seçin → işin çok kolaylaşır.</li></ul>
+<ul><li>Eğer yoksa:</li></ul>
+<ul><li><strong>Modern servisler</strong> → OAuth2</li></ul>
+<ul><li><strong>Basit API’ler</strong> → Bearer Token</li></ul>
+<ul><li><strong>Çok eski sistemler</strong> → Basic Auth veya Digest</li></ul>
+<hr />
+<h3 id="bonus-1-n8n-ile-otomasyon-authentication-5-hangi-yontemi-kullanacagimizi-nasil-bilecegiz">5. Hangi Yöntemi Kullanacağımızı Nasıl Bileceğiz?</h3>
+<p>Burada sihirli cevap: <strong>Servisin dökümantasyonu</strong>. Her servis kendi kapısını nasıl açacağını yazar. Siz de n8n’de buna uygun anahtarı seçersiniz.</p>
+<ul><li>Dokümanda <strong>“Bearer Token” veya “API Key”</strong> yazıyorsa → _Bearer Auth_ ya da _Header Auth_.</li></ul>
+<ul><li>Dokümanda <strong>“API Key in URL”</strong> yazıyorsa → _Query Auth_.</li></ul>
+<ul><li>Dokümanda <strong>“OAuth2”</strong> diyorsa → _OAuth2_.</li></ul>
+<ul><li>Dokümanda <strong>“Basic Authentication (username &amp; password)”</strong> diyorsa → _Basic Auth_.</li></ul>
+<p>👉 Eğer servis için n8n’de zaten <strong>hazır node</strong> varsa, doğru yöntem sizin yerinize otomatik seçilmiş olur. Sadece gerekli bilgiyi girmeniz yeterlidir.</p>
+<hr />
+<h3 id="bonus-1-n8n-ile-otomasyon-authentication-kisacasi">Kısacası:</h3>
+<p>n8n’de authentication, <strong>robotunuz sizin yerinize bir kapıdan geçebilmesi için ona doğru anahtarı vermek</strong> gibidir.   Bazen bu anahtar bir şifre olur, bazen tek kullanımlık bir kart (token), bazen de büyük bir şirketten alınmış resmi izin belgesi (OAuth2).</p>
+<hr />
+</section>
+
+<section id="bonus-2-sik-kullandigimiz-authenticationlar" class="guide-doc">
+  <div class="chapter-tag">Auth</div>
+  <h2>BONUS 2 - Sık Kullandığımız Authenticationlar</h2>
+  <h3 id="bonus-2-sik-kullandigimiz-authenticationlar-sik-kullandigimiz-authenticationlar">Sık Kullandığımız Authenticationlar</h3>
+<p>n8n’de birçok farklı servisle bağlantı kurabiliriz ama bazılarını diğerlerinden çok daha sık kullanıyoruz. Bu bölümde, en çok ihtiyaç duyacağımız ve pratikte tekrar tekrar karşımıza çıkacak olan authentication ayarlarını öğreneceğiz.</p>
+<p>Adımlar ilk bakışta karmaşık görünebilir ama endişelenme: bir kez kurduktan sonra bu bilgileri sürekli kullanabileceksin.</p>
+<p>İşleyeceğimiz başlıca servisler:</p>
+<ol><li><strong>Google Cloud Console</strong> (Drive, Sheets vb.)</li></ol>
+<ol><li><strong>OpenAI ChatGPT</strong></li></ol>
+<ol><li><strong>Kie AI</strong></li></ol>
+<ol><li><strong>Fal AI</strong></li></ol>
+<h3 id="bonus-2-sik-kullandigimiz-authenticationlar-1-google-cloud-console-drive-gsheet-vb">1. Google Cloud Console (Drive, Gsheet vb.)</h3>
+<p>Google servislerini (Drive, Sheets, Gmail, Calendar vb.) n8n’de kullanabilmek için önce <strong>Google Cloud Console</strong> üzerinden OAuth2 kimlik doğrulaması ayarlamamız gerekiyor. Bu işlem sayesinde n8n, sizin adınıza Google’a bağlanıp veri okuyabilir ya da içerik oluşturabilir.</p>
+<p>İlk bakışta adımlar fazla görünebilir ama bir kez ayarladıktan sonra tekrar tekrar kullanabilirsiniz.</p>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-1-proje-olustur">Adım 1 – Proje Oluştur</h4>
+<ul><li><a href="https://cloud.google.com" target="_blank" rel="noreferrer">cloud.google.com</a>’a gidin ve hesabınıza giriş yapın.</li></ul>
+<ul><li>Sol üstteki <strong>Project</strong> menüsünden → <strong>New Project</strong> seçin → isim verin ve <strong>Create</strong>’e tıklayın.</li></ul>
+<ul><li>Birkaç saniye içinde proje hazır olacak.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926072204.png" alt="Ekran görüntüsü 20250926072204" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926072204</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-2-gerekli-api-leri-etkinlestir">Adım 2 – Gerekli API’leri Etkinleştir</h4>
+<ul><li>Menüden <strong>APIs &amp; Services → Enable APIs and Services</strong> yolunu izleyin.</li></ul>
+<ul><li>Buradan kullanacağınız servisleri arayın ve enable yapın:</li></ul>
+<ul><li><strong>Google Sheets API</strong></li></ul>
+<ul><li><strong>Google Drive API</strong></li></ul>
+<ul><li>(İhtiyacınıza göre Calendar veya Gmail de açabilirsiniz.)</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926073728.png" alt="Ekran görüntüsü 20250926073728" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926073728</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926073833.png" alt="Ekran görüntüsü 20250926073833" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926073833</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-3-oauth-consent-screen-hazirla">Adım 3 – OAuth Consent Screen Hazırla</h4>
+<p>Şimdiye kadar n8n’de bir credential oluşturduk ve içine Google’dan aldığımız bilgileri koyduk. Ama Google hâlâ “Bu uygulama kimdir?” diye soruyor. İşte burada devreye OAuth giriyor.</p>
+<ul><li>Google’a dönün → OAuth ayarlarını tamamlayın.</li></ul>
+<ul><li>Bu ayar sayesinde Google, n8n’i tanıyor ve güveniyor.</li></ul>
+<ul><li>Böylece n8n sizin yerinize Google servislerine bağlanabiliyor.</li></ul>
+<ul><li><strong>APIs &amp; Services → OAuth consent screen</strong> sekmesine girin.</li></ul>
+<ul><li><strong>Get Started</strong> de, uygulamanıza bir isim verin (ör. _n8n App_).</li></ul>
+<ul><li>Gmail hesabı kullanıyorsanız <strong>External</strong>, Workspace kullanıyorsanız <strong>Internal</strong> seçin.</li></ul>
+<ul><li>Destek e-postanızı girin ve kaydedin.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926074446.png" alt="Ekran görüntüsü 20250926074446" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926074446</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926074510.png" alt="Ekran görüntüsü 20250926074510" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926074510</figcaption></figure>
+<hr />
+<p>Consent screen ayarlarını tamamladık. Bu ekran sayesinde Google, uygulamanızı gördü ve kullanıcıya hangi izinleri isteyeceğini biliyor. Şimdi sıra Google’ın n8n’i gerçekten tanıyacağı kimlik kartını oluşturmaya geldi: <strong>OAuth Client ID</strong>.</p>
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-4-oauth-client-id-olustur">Adım 4 – OAuth Client ID Oluştur</h4>
+<p>Google, n8n’i tanımadığı için bir kimlik isteyecektir. Siz Client ID oluşturunca Google n8n’e bir <strong>kimlik kartı</strong> verir ve n8n bu kartla sizin adınıza işlem yapabilir. Yani OAuth Client ID, Google’a <strong>“Bu uygulama benim”</strong> demenin yolu. BU ADIM ÇOK ÖNEMLİ!</p>
+<ul><li><strong>Credentials → Create Credential → OAuth Client ID</strong> yolunu izleyin.</li></ul>
+<ul><li>Uygulama türü olarak <strong>Web Application</strong> seçin.</li></ul>
+<ul><li>Bir isim verin (ör. _n8n Client_).</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075021.png" alt="Ekran görüntüsü 20250926075021" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075021</figcaption></figure>
+<ul><li><strong>Redirect URI</strong> eklemen gerekiyor:</li></ul>
+<ul><li>Bunun için n8n&#39;e gidin ve yeni bir credential oluştur.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075242.png" alt="Ekran görüntüsü 20250926075242" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075242</figcaption></figure>
+<ul><li>Bu adımda hangi uygulama için credential oluşturacaksanız onu seçin. Unutmayın her uygulama için ayrı seçim yapmanız gerekiyor.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075323.png" alt="Ekran görüntüsü 20250926075323" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075323</figcaption></figure>
+<p>-</p>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075514.png" alt="Ekran görüntüsü 20250926075514" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075514</figcaption></figure>
+<p>-</p>
+<ul><li>Orada çıkan Redirect URL’yi kopyalayın, Google Console’daki alana yapıştırın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075557.png" alt="Ekran görüntüsü 20250926075557" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075557</figcaption></figure>
+<ul><li><strong>Create</strong> de → size <strong>Client ID</strong> ve <strong>Client Secret</strong> verecek. bunu kopyalayın. </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075743.png" alt="Ekran görüntüsü 20250926075743" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075743</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-5-bilgileri-n8n-e-gir">Adım 5 – Bilgileri n8n’e Gir</h4>
+<ul><li>n8n’de Google Credential ekranına dönün.</li></ul>
+<ul><li><strong>Client ID</strong> değerini yapıştırın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075900.png" alt="Ekran görüntüsü 20250926075900" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075900</figcaption></figure>
+<ul><li><strong>Client Secret</strong> değerini almak için console&#39;da <strong>clients</strong> sayfasına geri dönün ve secret key&#39;i kopyalayın. </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080056.png" alt="Ekran görüntüsü 20250926080056" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080056</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080218.png" alt="Ekran görüntüsü 20250926080218" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080218</figcaption></figure>
+<ul><li>- n8n’de Google Credential ekranına dönün.</li></ul>
+<ul><li><strong>Client Secret</strong> değerini yapıştırın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080336.png" alt="Ekran görüntüsü 20250926080336" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080336</figcaption></figure>
+<ul><li>Kaydet.</li></ul>
+<hr />
+<blockquote><p><strong>Not:</strong></p><p></p><p>- <strong>OAuth yöntemi</strong>, Google’ın belirlediği kural kitabıdır.</p><p>    </p><p>- <strong>Credential</strong>, bu kurala göre hazırlanmış anahtar kutusudur.</p><p>    </p><p></p><p>Yani ikisi ayrı şeydir ama birbirini tamamlar.</p></blockquote>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-6-google-ile-baglan">Adım 6 – Google ile Bağlan</h4>
+<ul><li>Credential ekranında <strong>Sign in with Google</strong> butonuna basın.</li></ul>
+<ul><li>Google hesabınızla giriş yapın → izinleri seçin.</li></ul>
+<ul><li>İlk girişte “application blocked” hatası alabilirsiniz (çünkü uygulama test modunda).</li></ul>
+<p>-</p>
+<ul><li>Çözüm: Google Console’da uygulamanızı <strong>Publish App</strong> yap.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080510.png" alt="Ekran görüntüsü 20250926080510" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080510</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-7-baglantiyi-test-et">Adım 7 – Bağlantıyı Test Et</h4>
+<ul><li>Tekrar giriş yaptığınızda bağlantı başarılı olacak. Bazen biraz beklemeniz gerekebilir. Endişe etmeyin. Genellikle 10 dakika içinde bağlantı kurabiliyorsunuz.</li></ul>
+<ul><li>Artık n8n’den Google Sheets oluşturabilir, Drive’daki dosyaları yönetebilir ya da Gmail üzerinden otomatik e-posta gönderebilirsin. Unutmayın her servis için yeni bir credential oluşturman gerekiyor. Google Sheets için oluşturduğunuz credential, Calendar uygulaması için çalışmaz :)</li></ul>
+<h3 id="bonus-2-sik-kullandigimiz-authenticationlar-2-openai-chatgpt">2. OpenAI ChatGPT</h3>
+<p>n8n’de ChatGPT’yi kullanabilmek için <strong>OpenAI API anahtarını</strong> (API Key) almak ve bunu n8n’e credential olarak eklemek gerekiyor. Böylece n8n, ChatGPT ile konuşabilir ve sizin workflow’larınızın içinde metin üretebilir.</p>
+<p><strong>Not:</strong> API Key, ChatGPT’ye erişmek için size verilen <strong>gizli anahtardır</strong>. Bu anahtar olmadan n8n ChatGPT’ye bağlanamaz.</p>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-1-yeni-credential-olustur">Adım 1 – Yeni Credential Oluştur</h4>
+<ul><li>n8n anasayfasında <strong>Credential</strong> bölümüne gel.</li></ul>
+<p>-</p>
+<ul><li><strong>Create New Credential</strong> seçeneğine tıklayın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926082815.png" alt="Ekran görüntüsü 20250926082815" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926082815</figcaption></figure>
+<ul><li>Burada senden OpenAI API anahtarı istenecek.</li></ul>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-2-openai-api-key-al">Adım 2 – OpenAI API Key Al</h4>
+<ul><li><a href="https://platform.openai.com/api" target="_blank" rel="noreferrer">platform.openai.com</a> adresine gidin. (Uygulamanın sayfası değil, işlerin arkaplanı burası.)</li></ul>
+<ul><li>Hesabınıza giriş yapın (yoksa ücretsiz bir hesap aç).</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083154.png" alt="Ekran görüntüsü 20250926083154" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083154</figcaption></figure>
+<ul><li>Sağ üstteki profil simgesine tıklayın → <strong>View API keys</strong> menüsüne girin.</li></ul>
+<ul><li>Eğer daha önce oluşturmadıysanız <strong>Create new secret key</strong> seçin.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083329.png" alt="Ekran görüntüsü 20250926083329" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083329</figcaption></figure>
+<ul><li>Anahtara bir isim verin (ör. _n8n ChatGPT Key_).</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083407.png" alt="Ekran görüntüsü 20250926083407" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083407</figcaption></figure>
+<p>-</p>
+<ul><li><strong>Create secret key</strong> dedikten sonra çıkan uzun anahtarı kopyalayın. ⚠️ Bu anahtar yalnızca bir kez gösterilir. Ve kimse ile paylaşmaman gerekir. Aksi takdirde bir gün uyandığında tüm paranın başkaları tarafından harcandığını görebilirsiniz.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083446.png" alt="Ekran görüntüsü 20250926083446" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083446</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-3-api-key-i-n8n-e-yapistir">Adım 3 – API Key’i n8n’e Yapıştır</h4>
+<ul><li>Tekrar n8n’e dönün.</li></ul>
+<ul><li>Credential ekranındaki ilgili alana API key’i yapıştırın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083613.png" alt="Ekran görüntüsü 20250926083613" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083613</figcaption></figure>
+<ul><li><strong>Save</strong> de.</li></ul>
+<ul><li>Bağlantı başarılıysa yeşil bir onay kutusu görürsün.</li></ul>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-4-butce">Adım 4 – Bütçe</h4>
+<ul><li>Eğer “insufficient quota” hatası alırsan bu, hesabında kredi olmadığını gösterir. </li></ul>
+<ul><li>OpenAI hesabında <strong>Billing</strong> bölümüne gidin → kredi ekleyin.</li></ul>
+<ul><li>Tekrar denediğinde başarılı şekilde yanıt alacaksınız.</li><li><strong>10$’lık kredi</strong>, küçük projeler için uzun süre yeterlidir.</li><li>Fiyatlandırmayı görmek için <a href="https://openai.com/api/pricing/" target="_blank" rel="noreferrer">OpenAI Pricing</a> sayfasını kontrol edin.</li></ul>
+<hr />
+<p>Artık ChatGPT’yi n8n workflow’una bağladınız ✅ -&gt; Bundan sonra ChatGPT, n8n’in içinde sizin robot yardımcınız gibi çalışacak. Ona sorular sorabilir, metin yazdırabilir veya otomatik yanıtlar oluşturabilirsiniz.</p>
+<hr />
+<h3 id="bonus-2-sik-kullandigimiz-authenticationlar-3-kie-ai-burada-erisebilirsiniz">3. KIE AI: <a href="https://kie.ai?ref=c5aef62297a7e4bc91eea3e5d2827944" target="_blank" rel="noreferrer">Burada Erişebilirsiniz</a></h3>
+<p>KIE AI, tek bir <strong>API anahtarıyla</strong> onlarca farklı <strong>görsel, video ve müzik modeli</strong> kullanmanı sağlar. Normalde her model için ayrı ayrı API key almak gerekirken, KIE AI sayesinde hepsine tek noktadan erişebilirsiniz. Üstelik çok uygun fiyatlı olduğu için içerik üretiminde hızlı ve ucuz denemeler yapabilmek mümkün.</p>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-1-hesap-olustur">Adım 1 – Hesap Oluştur</h4>
+<ul><li><a href="https://kie.ai?ref=c5aef62297a7e4bc91eea3e5d2827944" target="_blank" rel="noreferrer">kie.ai</a> adresine gidin.</li></ul>
+<ul><li>Google hesabınızla veya e-posta ile ücretsiz kayıt olun.</li></ul>
+<ul><li>İlk kayıt olunduğunda küçük bir <strong>deneme kredisi</strong> verilir, hemen test edebilirsiniz.</li></ul>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-2-api-key-al">Adım 2 – API Key Al</h4>
+<ul><li>KIE AI panelinde <strong>API Keys</strong> bölümüne girin.</li></ul>
+<ul><li><strong>Create API Key</strong> seçeneğine tıklayın.</li></ul>
+<ul><li>API key için bir isim verin (ör. _n8n KIE Key_).</li></ul>
+<p>⚠️ Bu anahtar yalnızca bir kez gösterilir, mutlaka güvenli bir yere kaydedin.</p>
+<ul><li><strong>Create</strong> de → uzun bir anahtar çıkacak.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926085420.png" alt="Ekran görüntüsü 20250926085420" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926085420</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-3-n8n-de-credential-olustur">Adım 3 – n8n’de Credential Oluştur</h4>
+<ul><li>n8n’de <strong>Credentials → Create New Credential</strong> yolunu izleyin.</li></ul>
+<ul><li>Servis olarak  <strong>Header Auth</strong> (manual bağlantı için) seçin.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926085716.png" alt="Ekran görüntüsü 20250926085716" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926085716</figcaption></figure>
+<p>👉 Örnek: <code>Bearer e9ehh93745ddgefddfk</code></p>
+<ul><li><strong>Name</strong> bölümüne &quot;Authorization&quot; yazın.</li><li><strong>Value</strong> alanına <code>Bearer</code> yazın, yanına bir boşluk bırak ve hemen ardından kendi API Key’inizi ekleyin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926090328.png" alt="Ekran görüntüsü 20250926090328" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926090328</figcaption></figure>
+<ul><li>Kaydet.</li></ul>
+<hr />
+<p>Artık KIE AI’yı n8n’e bağladınız ✅   Bundan sonra tek bir API key ile:</p>
+<ul><li>Görseller oluşturabilir,</li></ul>
+<ul><li>Videolar üretebilir veya düzenleyebilir,</li></ul>
+<ul><li>Gerekirse müzik modellerini bile kullanabilirsiniz.</li></ul>
+<p>KIE AI’nin avantajı, <strong>tüm modelleri tek anahtardan yönetebilmen</strong>. Yani MidJourney, Runway, VO3 gibi farklı servisler için ayrı ayrı hesap açmana gerek yok.</p>
+<hr />
+<h3 id="bonus-2-sik-kullandigimiz-authenticationlar-4-fal-ai">4. Fal AI</h3>
+<p><strong>Fal AI</strong>, 600’den fazla <strong>görsel, video, ses ve müzik modeli</strong>ne tek bir API ile erişmeni sağlar. Özellikle <strong>görselleri videoya dönüştürmek</strong> için kullanılır.</p>
+<p>n8n’de kullanabilmek için bir <strong>API Key</strong> oluşturup bunu <strong>credential</strong> olarak eklemen gerekir.</p>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-1-api-key-olustur">Adım 1 – API Key Oluştur</h4>
+<ul><li><a href="https://fal.ai" target="_blank" rel="noreferrer">fal.ai</a> hesabınıza giriş yapın.</li></ul>
+<ul><li>Sağ üstteki <strong>API Keys</strong> bölümüne gidin.</li></ul>
+<ul><li><strong>Create API Key</strong> butonuna basın.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091302.png" alt="Ekran görüntüsü 20250926091302" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091302</figcaption></figure>
+<ul><li>Anahtarınızı kopyalayın → güvenli bir yere kaydedin. (size yalnızca bir kez gösterilir.)</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091336.png" alt="Ekran görüntüsü 20250926091336" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091336</figcaption></figure>
+<hr />
+<h4 id="bonus-2-sik-kullandigimiz-authenticationlar-adim-2-n8n-de-credential-olustur">Adım 2 – n8n’de Credential Oluştur</h4>
+<ul><li>n8n’de <strong>Credentials → Create New Credential</strong> yolunu izleyin.</li></ul>
+<ul><li><strong>Generic Credential Type</strong> seçin.</li></ul>
+<ul><li>Açılan listeden <strong>Header Auth</strong> seçin.</li></ul>
+<ul><li><strong>+ Create new credential</strong> de.</li></ul>
+<p>Şu değerleri girin:</p>
+<ul><li><strong>Name:</strong> <code>Authorization</code></li></ul>
+<p>👉 Örnek: <code>Key 9dj32f8sd9f23jsdf...</code></p>
+<ul><li><strong>Value:</strong> <code>Key</code> yazın, ardından bir boşluk bırak ve kendi API Key’inizi ekleyin.  </li></ul>
+<ul><li><strong>Save</strong> diyerek kaydedin.</li></ul>
+<ul><li>Artık n8n, Fal AI ile bağlanmaya hazır.</li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091402.png" alt="Ekran görüntüsü 20250926091402" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091402</figcaption></figure>
+<hr />
+<h3 id="bonus-2-sik-kullandigimiz-authenticationlar-bonus-auth-degerleri-neden-farkli">🎁 Bonus: Auth Değerleri Neden Farklı?</h3>
+<p>API anahtarını n8n’de girerken bazen <strong>Bearer</strong>, bazen <strong>Key</strong>, bazen de hiçbir şey yazmıyoruz. Peki neden?</p>
+<p>Her servis, güvenlik sisteminizi biraz farklı tasarlıyor:</p>
+<ul><li><strong>Bearer</strong> → Servis “bu bir kimlik kartıdır” demek için başına _Bearer_ koymamızı ister.</li></ul>
+<ul><li><strong>Key</strong> → Bazı servisler “anahtar” kelimesini önde görmek ister.</li></ul>
+<ul><li><strong>Hiçbir şey</strong> → Bazıları ise doğrudan anahtarı kabul eder, ekstra ibare istemez.</li></ul>
+<p>👉 Yani burada bir yanlışlık yok. Sadece her API’nin “şifreyi sunma şekli” farklı. Biz de n8n’de, servisin istediği formata göre Value kısmını dolduruyoruz.</p>
+<p><strong>Peki biz hangisini yazacağımızı nasıl bileceğiz?</strong> Bunun cevabı için her zaman <strong>ilgili servis sağlayıcının resmi dökümantasyonuna</strong> bakmamız gerekir. Orada hangi formatı istedikleri net şekilde yazar.</p>
+</section>
+
+<section id="sik-kullandigimiz-authenticationlar" class="guide-doc">
+  <div class="chapter-tag">Auth</div>
+  <h2>Sık Kullandığımız Authenticationlar</h2>
+  <p>n8n’de birçok farklı servisle bağlantı kurabiliriz ama bazılarını diğerlerinden çok daha sık kullanıyoruz. Bu bölümde, en çok ihtiyaç duyacağımız ve pratikte tekrar tekrar karşımıza çıkacak olan authentication ayarlarını öğreneceğiz.</p>
+<p>Adımlar ilk bakışta karmaşık görünebilir ama endişelenme: bir kez kurduktan sonra bu bilgileri sürekli kullanabileceksin.</p>
+<p>İşleyeceğimiz başlıca servisler:</p>
+<ol><li><strong>Google Cloud Console</strong> (Drive, Sheets vb.)</li><li><strong>OpenAI ChatGPT</strong></li><li><strong>Kie AI</strong></li><li><strong>Fal AI</strong></li></ol>
+<hr />
+<h3 id="sik-kullandigimiz-authenticationlar-1-google-cloud-console-drive-gsheet-vb">1. Google Cloud Console (Drive, Gsheet vb.)</h3>
+<p>Google servislerini (Drive, Sheets, Gmail, Calendar vb.) n8n’de kullanabilmek için önce <strong>Google Cloud Console</strong> üzerinden OAuth2 kimlik doğrulaması ayarlamamız gerekiyor. Bu işlem sayesinde n8n, sizin adınıza Google’a bağlanıp veri okuyabilir ya da içerik oluşturabilir.</p>
+<p>İlk bakışta adımlar fazla görünebilir ama bir kez ayarladıktan sonra tekrar tekrar kullanabilirsiniz.</p>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-1-proje-olustur">Adım 1 – Proje Oluştur</h4>
+<ul><li><a href="https://cloud.google.com" target="_blank" rel="noreferrer">cloud.google.com</a>’a gidin ve hesabınıza giriş yapın.  </li><li>Sol üstteki <strong>Project</strong> menüsünden → <strong>New Project</strong> seçin → isim verin ve <strong>Create</strong>’e tıklayın.  </li><li>Birkaç saniye içinde proje hazır olacak.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926072204.png" alt="Ekran görüntüsü 20250926072204" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926072204</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-2-gerekli-api-leri-etkinlestir">Adım 2 – Gerekli API’leri Etkinleştir</h4>
+<ul><li>Menüden <strong>APIs &amp; Services → Enable APIs and Services</strong> yolunu izleyin.  </li><li>Buradan kullanacağınız servisleri arayın ve enable yapın:  </li><li><strong>Google Sheets API</strong>  </li><li><strong>Google Drive API</strong>  </li><li>(İhtiyacınıza göre Calendar veya Gmail de açabilirsiniz.)  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926073728.png" alt="Ekran görüntüsü 20250926073728" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926073728</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926073833.png" alt="Ekran görüntüsü 20250926073833" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926073833</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-3-oauth-consent-screen-hazirla">Adım 3 – OAuth Consent Screen Hazırla</h4>
+<p>Şimdiye kadar n8n’de bir credential oluşturduk ve içine Google’dan aldığımız bilgileri koyduk. Ama Google hâlâ “Bu uygulama kimdir?” diye soruyor. İşte burada devreye OAuth giriyor.</p>
+<ul><li>Google’a dönün → OAuth ayarlarını tamamlayın.  </li><li>Bu ayar sayesinde Google, n8n’i tanıyor ve güveniyor.  </li><li>Böylece n8n sizin yerinize Google servislerine bağlanabiliyor.  </li></ul>
+<ul><li><strong>APIs &amp; Services → OAuth consent screen</strong> sekmesine girin.  </li><li><strong>Get Started</strong> de, uygulamanıza bir isim verin (ör. _n8n App_).  </li><li>Gmail hesabı kullanıyorsanız <strong>External</strong>, Workspace kullanıyorsanız <strong>Internal</strong> seçin.  </li><li>Destek e-postanızı girin ve kaydedin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926074446.png" alt="Ekran görüntüsü 20250926074446" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926074446</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926074510.png" alt="Ekran görüntüsü 20250926074510" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926074510</figcaption></figure>
+<hr />
+<p>Consent screen ayarlarını tamamladık. Bu ekran sayesinde Google, uygulamanızı gördü ve kullanıcıya hangi izinleri isteyeceğini biliyor. Şimdi sıra Google’ın n8n’i gerçekten tanıyacağı kimlik kartını oluşturmaya geldi: <strong>OAuth Client ID</strong>.</p>
+<h4 id="sik-kullandigimiz-authenticationlar-adim-4-oauth-client-id-olustur">Adım 4 – OAuth Client ID Oluştur</h4>
+<p>Google, n8n’i tanımadığı için bir kimlik isteyecektir. Siz Client ID oluşturunca Google n8n’e bir <strong>kimlik kartı</strong> verir ve n8n bu kartla sizin adınıza işlem yapabilir. Yani OAuth Client ID, Google’a <strong>“Bu uygulama benim”</strong> demenin yolu. ➡️ <strong>BU ADIM ÇOK ÖNEMLİ!</strong></p>
+<ul><li><strong>Credentials → Create Credential → OAuth Client ID</strong> yolunu izleyin.  </li><li>Uygulama türü olarak <strong>Web Application</strong> seçin.  </li><li>Bir isim verin (ör. _n8n Client_).  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075021.png" alt="Ekran görüntüsü 20250926075021" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075021</figcaption></figure>
+<ul><li><strong>Redirect URI</strong> eklemen gerekiyor:  </li><li>Bunun için n8n&#39;e gidin ve yeni bir credential oluştur.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075242.png" alt="Ekran görüntüsü 20250926075242" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075242</figcaption></figure>
+<ul><li>Bu adımda hangi uygulama için credential oluşturacaksanız onu seçin. Unutmayın her uygulama için ayrı seçim yapmanız gerekiyor.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075323.png" alt="Ekran görüntüsü 20250926075323" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075323</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075514.png" alt="Ekran görüntüsü 20250926075514" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075514</figcaption></figure>
+<ul><li>Orada çıkan Redirect URL’yi kopyalayın, Google Console’daki alana yapıştırın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075557.png" alt="Ekran görüntüsü 20250926075557" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075557</figcaption></figure>
+<ul><li><strong>Create</strong> de → size <strong>Client ID</strong> ve <strong>Client Secret</strong> verecek. bunu kopyalayın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075743.png" alt="Ekran görüntüsü 20250926075743" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075743</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-5-bilgileri-n8n-e-gir">Adım 5 – Bilgileri n8n’e Gir</h4>
+<ul><li>n8n’de Google Credential ekranına dönün.  </li><li><strong>Client ID</strong> değerini yapıştırın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926075900.png" alt="Ekran görüntüsü 20250926075900" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926075900</figcaption></figure>
+<ul><li><strong>Client Secret</strong> değerini almak için console&#39;da <strong>clients</strong> sayfasına geri dönün ve secret key&#39;i kopyalayın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080056.png" alt="Ekran görüntüsü 20250926080056" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080056</figcaption></figure>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080218.png" alt="Ekran görüntüsü 20250926080218" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080218</figcaption></figure>
+<ul><li>n8n’de Google Credential ekranına dönün.  </li><li><strong>Client Secret</strong> değerini yapıştırın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080336.png" alt="Ekran görüntüsü 20250926080336" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080336</figcaption></figure>
+<ul><li>Kaydet.  </li></ul>
+<hr />
+<blockquote><p><strong>Not:</strong>  </p><p>- <strong>OAuth yöntemi</strong>, Google’ın belirlediği kural kitabıdır.  </p><p>- <strong>Credential</strong>, bu kurala göre hazırlanmış anahtar kutusudur.  </p><p>Yani ikisi ayrı şeydir ama birbirini tamamlar.</p></blockquote>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-6-google-ile-baglan">Adım 6 – Google ile Bağlan</h4>
+<ul><li>Credential ekranında <strong>Sign in with Google</strong> butonuna basın.  </li><li>Google hesabınızla giriş yapın → izinleri seçin.  </li><li>İlk girişte “application blocked” hatası alabilirsiniz (çünkü uygulama test modunda).  </li><li>Çözüm: Google Console’da uygulamanızı <strong>Publish App</strong> yap.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926080510.png" alt="Ekran görüntüsü 20250926080510" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926080510</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-7-baglantiyi-test-et">Adım 7 – Bağlantıyı Test Et</h4>
+<ul><li>Tekrar giriş yaptığınızda bağlantı başarılı olacak.  </li><li>Bazen biraz beklemeniz gerekebilir. Endişe etmeyin. Genellikle 10 dakika içinde bağlantı kurabiliyorsunuz.  </li><li>Artık n8n’den Google Sheets oluşturabilir, Drive’daki dosyaları yönetebilir ya da Gmail üzerinden otomatik e-posta gönderebilirsin.  </li><li>Unutmayın: Her servis için yeni bir credential oluşturman gerekir. Google Sheets için oluşturduğunuz credential, Calendar için çalışmaz.  </li></ul>
+<hr />
+<h3 id="sik-kullandigimiz-authenticationlar-2-openai-chatgpt">2. OpenAI ChatGPT</h3>
+<p>n8n’de ChatGPT’yi kullanabilmek için <strong>OpenAI API anahtarını</strong> (API Key) almak ve bunu n8n’e credential olarak eklemek gerekiyor. Böylece n8n, ChatGPT ile konuşabilir ve sizin workflow’larınızın içinde metin üretebilir.</p>
+<p><strong>Not:</strong> API Key, ChatGPT’ye erişmek için size verilen <strong>gizli anahtardır</strong>. Bu anahtar olmadan n8n ChatGPT’ye bağlanamaz.</p>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-1-yeni-credential-olustur">Adım 1 – Yeni Credential Oluştur</h4>
+<ul><li>n8n anasayfasında <strong>Credential</strong> bölümüne gel.  </li><li><strong>Create New Credential</strong> seçeneğine tıklayın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926082815.png" alt="Ekran görüntüsü 20250926082815" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926082815</figcaption></figure>
+<ul><li>Burada senden OpenAI API anahtarı istenecek.  </li></ul>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-2-openai-api-key-al">Adım 2 – OpenAI API Key Al</h4>
+<ul><li><a href="https://platform.openai.com/api" target="_blank" rel="noreferrer">platform.openai.com</a> adresine gidin.  </li><li>Hesabınıza giriş yapın (yoksa ücretsiz hesap aç).  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083154.png" alt="Ekran görüntüsü 20250926083154" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083154</figcaption></figure>
+<ul><li>Sağ üstteki profil simgesine tıklayın → <strong>View API keys</strong> menüsüne girin.  </li><li>Daha önce oluşturmadıysanız <strong>Create new secret key</strong> seçin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083329.png" alt="Ekran görüntüsü 20250926083329" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083329</figcaption></figure>
+<ul><li>Anahtara bir isim verin (ör. _n8n ChatGPT Key_).  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083407.png" alt="Ekran görüntüsü 20250926083407" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083407</figcaption></figure>
+<p>⚠️ Bu anahtar yalnızca bir kez gösterilir, mutlaka güvenli bir yere kaydedin.</p>
+<ul><li><strong>Create secret key</strong> de → çıkan uzun anahtarı kopyalayın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083446.png" alt="Ekran görüntüsü 20250926083446" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083446</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-3-api-key-i-n8n-e-yapistir">Adım 3 – API Key’i n8n’e Yapıştır</h4>
+<ul><li>Tekrar n8n’e dönün.  </li><li>Credential ekranındaki alana API key’i yapıştırın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926083613.png" alt="Ekran görüntüsü 20250926083613" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926083613</figcaption></figure>
+<ul><li><strong>Save</strong> de.  </li><li>Bağlantı başarılıysa yeşil bir onay kutusu görürsün.  </li></ul>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-4-butce">Adım 4 – Bütçe</h4>
+<ul><li>Eğer “insufficient quota” hatası alırsan bu, hesabında kredi olmadığını gösterir.  </li><li>OpenAI hesabında <strong>Billing</strong> bölümüne gidin → kredi ekleyin.  </li><li>Tekrar denediğinde başarılı şekilde yanıt alacaksınız.  </li><li><strong>10$ kredi</strong>, küçük projeler için uzun süre yeterlidir.  </li><li>Fiyatlandırma için <a href="https://openai.com/api/pricing/" target="_blank" rel="noreferrer">OpenAI Pricing</a> sayfasına bak.  </li></ul>
+<hr />
+<p>Artık ChatGPT’yi n8n workflow’una bağladınız ✅ Bundan sonra ChatGPT, n8n’in içinde sizin robot yardımcınız gibi çalışacak:</p>
+<ul><li>Otomatik cevaplar üretebilir  </li><li>Metin özetleyebilir  </li><li>Yeni içerikler oluşturabilir  </li></ul>
+<hr />
+<h3 id="sik-kullandigimiz-authenticationlar-3-kie-ai">3. KIE AI</h3>
+<p>KIE AI, tek bir <strong>API anahtarıyla</strong> onlarca farklı <strong>görsel, video ve müzik modeli</strong> kullanmanı sağlar. Normalde her model için ayrı ayrı API key almak gerekirken, KIE AI sayesinde hepsine tek noktadan erişebilirsiniz. Üstelik uygun fiyatlı olduğu için içerik üretiminde hızlı ve ucuz denemeler yapabilmek mümkün.</p>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-1-hesap-olustur">Adım 1 – Hesap Oluştur</h4>
+<ul><li><a href="https://kie.ai" target="_blank" rel="noreferrer">kie.ai</a> adresine gidin.  </li><li>Google hesabınızla veya e-posta ile ücretsiz kayıt olun.  </li><li>İlk kayıt olunduğunda küçük bir <strong>deneme kredisi</strong> verilir.  </li></ul>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-2-api-key-al">Adım 2 – API Key Al</h4>
+<p>⚠️ Bu anahtar yalnızca bir kez gösterilir, mutlaka güvenli bir yere kaydedin.</p>
+<ul><li>KIE AI panelinde <strong>API Keys</strong> bölümüne girin.  </li><li><strong>Create API Key</strong> seçeneğine tıklayın.  </li><li>API key için bir isim verin (ör. _n8n KIE Key_).  </li><li><strong>Create</strong> de → uzun bir anahtar çıkacak.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926085420.png" alt="Ekran görüntüsü 20250926085420" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926085420</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-3-n8n-de-credential-olustur">Adım 3 – n8n’de Credential Oluştur</h4>
+<ul><li>n8n’de <strong>Credentials → Create New Credential</strong> yolunu izleyin.  </li><li>Servis olarak <strong>Header Auth</strong> seçin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926085716.png" alt="Ekran görüntüsü 20250926085716" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926085716</figcaption></figure>
+<p>👉 Örnek: <code>Bearer e9ehh93745uhfddfk</code></p>
+<ul><li><strong>Name</strong> bölümüne <code>&quot;Authorization&quot;</code> yazın.  </li><li><strong>Value</strong> alanına <code>Bearer</code> yazın, yanına bir boşluk bırak ve API Key’inizi ekleyin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926090328.png" alt="Ekran görüntüsü 20250926090328" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926090328</figcaption></figure>
+<ul><li>Kaydet.  </li></ul>
+<hr />
+<p>Artık KIE AI’yı n8n’e bağladınız ✅ Bundan sonra tek bir API key ile:</p>
+<ul><li>Görseller oluşturabilir  </li><li>Videolar üretebilir veya düzenleyebilir  </li><li>Müzik modellerini kullanabilirsiniz  </li></ul>
+<p>KIE AI’nin avantajı, <strong>tüm modelleri tek anahtardan yönetebilmen</strong>. Yani MidJourney, Runway, VO3 gibi farklı servisler için ayrı ayrı hesap açmana gerek yok.</p>
+<hr />
+<h3 id="sik-kullandigimiz-authenticationlar-4-fal-ai">4. Fal AI</h3>
+<p><strong>Fal AI</strong>, 600’den fazla <strong>görsel, video, ses ve müzik modeli</strong>ne tek bir API ile erişmeni sağlar. Özellikle <strong>görselleri videoya dönüştürmek</strong> için sıkça kullanılır.</p>
+<p>n8n’de kullanabilmek için bir <strong>API Key</strong> oluşturup bunu <strong>credential</strong> olarak eklemen gerekir.</p>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-1-api-key-olustur">Adım 1 – API Key Oluştur</h4>
+<ul><li><a href="https://fal.ai" target="_blank" rel="noreferrer">fal.ai</a> hesabınıza giriş yapın.  </li><li>Sağ üstteki <strong>API Keys</strong> bölümüne gidin.  </li><li><strong>Create API Key</strong> butonuna basın.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091302.png" alt="Ekran görüntüsü 20250926091302" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091302</figcaption></figure>
+<p>⚠️ Bu anahtar yalnızca bir kez gösterilir.</p>
+<ul><li>Anahtarınızı kopyalayın → güvenli bir yere kaydedin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091336.png" alt="Ekran görüntüsü 20250926091336" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091336</figcaption></figure>
+<hr />
+<h4 id="sik-kullandigimiz-authenticationlar-adim-2-n8n-de-credential-olustur">Adım 2 – n8n’de Credential Oluştur</h4>
+<ul><li>n8n’de <strong>Credentials → Create New Credential</strong> yolunu izleyin.  </li><li><strong>Generic Credential Type</strong> seçin.  </li><li>Açılan listeden <strong>Header Auth</strong> seçin.  </li><li><strong>+ Create new credential</strong> de.  </li></ul>
+<p>Şu değerleri girin:</p>
+<p>👉 Örnek: <code>Key 9dj32f8sd9f23jsdf...</code></p>
+<ul><li><strong>Name:</strong> <code>Authorization</code>  </li><li><strong>Value:</strong> <code>Key</code> yazın, ardından bir boşluk bırak ve kendi API Key’inizi ekleyin.  </li></ul>
+<figure class="screen-figure"><img src="assets/source/pasted-image-20250926091402.png" alt="Ekran görüntüsü 20250926091402" loading="lazy" decoding="async" /><figcaption>Ekran görüntüsü 20250926091402</figcaption></figure>
+<ul><li><strong>Save</strong> diyerek kaydedin.  </li><li>Artık n8n, Fal AI ile bağlanmaya hazır.  </li></ul>
+<hr />
+<h3 id="sik-kullandigimiz-authenticationlar-bonus-auth-degerleri-neden-farkli">🎁 Bonus: Auth Değerleri Neden Farklı?</h3>
+<p>API anahtarını n8n’de girerken bazen <strong>Bearer</strong>, bazen <strong>Key</strong>, bazen de hiçbir şey yazmıyoruz. Peki neden?</p>
+<p>Her servis, güvenlik sisteminizi biraz farklı tasarlıyor:</p>
+<ul><li><strong>Bearer</strong> → Servis, “bu bir kimlik kartıdır” demek için başına _Bearer_ koymamızı ister.  </li><li><strong>Key</strong> → Bazı servisler “anahtar” kelimesini önde görmek ister.  </li><li><strong>Hiçbir şey</strong> → Bazıları ise doğrudan anahtarı kabul eder.  </li></ul>
+<p>👉 Yani burada bir yanlışlık yok. Sadece her API’nin “şifreyi sunma şekli” farklı. Biz de n8n’de, servisin istediği formata göre Value kısmını dolduruyoruz.</p>
+<p><strong>Peki biz hangisini yazacağımızı nasıl bileceğiz?</strong> Bunun cevabı için her zaman <strong>ilgili servis sağlayıcının resmi dökümantasyonuna</strong> bakmalıyız. Orada hangi formatı istedikleri net şekilde belirtilir.</p>
+</section>
+
+<section id="iletisim" class="author-contact" aria-labelledby="iletisim-baslik">
+  <div>
+    <p class="author-kicker">İletişim</p>
+    <h2 id="iletisim-baslik">Nefise Bora tarafından hazırlandı</h2>
+    <p>Eğitim, n8n otomasyonları ve yapay zekâ destekli iş akışlarıyla ilgili bağlantıda kalmak için LinkedIn üzerinden ulaşabilirsiniz.</p>
+  </div>
+  <a class="author-link" href="https://www.linkedin.com/in/nefisebora/" target="_blank" rel="noreferrer">LinkedIn profiline git</a>
+</section>
+</article></div>
+      </main>
+    </div>
+    <script type="application/json" id="module-data">[{"id":"rehber","label":"Rehber","startId":"cover","nav":[{"id":"cover","label":"Kapak"},{"id":"okuma-rehberi","label":"Okuma Rehberi"}]},{"id":"baslangic","label":"Başlangıç","startId":"baslangic","nav":[{"id":"baslangic","label":"Başlangıç ve Arayüz"},{"id":"1-n8n-nedir","label":"1- n8n Nedir?"},{"id":"1-n8n-nedir-hesap-olustur-n8n-cloud","label":"Hesap Oluştur: n8n.cloud"},{"id":"1-n8n-nedir-yeni-workflow-baslat","label":"Yeni Workflow Başlat"},{"id":"1-n8n-nedir-sol-panel-kontrol-merkezi","label":"Sol Panel – Kontrol Merkezi"},{"id":"1-n8n-nedir-ust-bar-workflow-a-ait-ayarlar","label":"Üst Bar – Workflow’a Ait Ayarlar"},{"id":"1-n8n-nedir-canvas-calisma-alani","label":"Canvas – Çalışma Alanı"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum","label":"n8n ile Otomasyon 1. Bölüm - Hiçbir Şey Bilmeyenler İçin 1. Bölüm"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-bu-rehber-ne-icin","label":"🎓 Bu Rehber Ne İçin?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-n8n-nedir","label":"🧠 n8n Nedir?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-n8n-ne-ise-yarar","label":"📦 n8n Ne İşe Yarar?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-bu-egitime-kimler-uygun","label":"🧰 Bu Eğitime Kimler Uygun?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-baslamak-icin-ne-gerekir","label":"🛠 Başlamak İçin Ne Gerekir?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-1-adim-en-kolay-kurulum","label":"✅ 1. Adım: En Kolay Kurulum"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-1-bolum-hicbir-sey-bilmeyenler-icin-1-bolum-2-bolum-node-ne-demek","label":"🔜 2. Bölüm: “Node” Ne Demek?"}]},{"id":"temel-akis","label":"Temel Akış","startId":"temel-akis","nav":[{"id":"temel-akis","label":"Temel Workflow Mantığı"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak","label":"n8n ile Otomasyon 2. Bölüm - Otomasyon Kurmak"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-node-nedir-en-basit-haliyle","label":"🔹 Node Nedir? (En Basit Haliyle)"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-gercek-hayattan-ornek","label":"🧱 Gerçek Hayattan Örnek"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-node-turleri-nelerdir","label":"📊 Node Türleri Nelerdir?"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-uygulamali-ornek-gunaydin-workflow","label":"🧪 Uygulamalı Örnek: “Günaydın Workflow”"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-ipuclari","label":"🧠 İpuçları"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-mini-gorev","label":"🎯 Mini Görev"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-2-bolum-otomasyon-kurmak-3-bolum-ilk-kendi-workflow-unu-kur-sifirdan-tiklayarak","label":"🔜 3. Bölüm: İlk Kendi Workflow’unu Kur – Sıfırdan, Tıklayarak!"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur","label":"n8n ile Otomasyon 3. Bölüm - İlk Kendi Workflow’unu Kur!"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-hedef-form-doldurulunca-e-posta-gitsin","label":"🎯 Hedef: Form Doldurulunca E-Posta Gitsin"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-kullanilacak-node-lar","label":"🧩 Kullanılacak Node’lar"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-adim-adim-kurulum","label":"🛠 Adım Adım Kurulum"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-1-adim-yeni-bir-workflow-olustur","label":"🔹 1. Adım: Yeni Bir Workflow Oluştur"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-2-adim-webhook-node-u-ekle","label":"🔹 2. Adım: Webhook Node’u Ekle"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-3-adim-email-node-u-ekle","label":"🔹 3. Adım: Email Node’u Ekle"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-4-adim-node-lari-bagla","label":"🔹 4. Adım: Node’ları Bağla"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-5-adim-test-et","label":"🔹 5. Adım: Test Et"},{"id":"n8n-ile-otomasyon-3-bolum-ilk-kendi-workflow-unu-kur-bonus-basit-form-ornegi-html","label":"🧪 Bonus: Basit Form Örneği (HTML)"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar","label":"n8n ile Otomasyon 4. Bölüm - Koşullar ve Akıllı Akışlar"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-set-node-benim-verim-bu","label":"🔹 Set Node – “Benim Verim Bu!”"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-ornek-veri","label":"Örnek Veri"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-yapilir","label":"Nasıl Yapılır?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-if-node-sartli-akis-kur","label":"🔸 IF Node – Şartlı Akış Kur"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-kurulur","label":"Nasıl Kurulur?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-switch-node-coklu-secenekli-kontrol","label":"🔻 Switch Node – Çoklu Seçenekli Kontrol"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-nasil-kurulur","label":"Nasıl Kurulur?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-mini-gorev-otomatik-tebrik-sistemi","label":"🎯 Mini Görev: Otomatik Tebrik Sistemi"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-kullanilacak-node-lar","label":"Kullanılacak Node'lar"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-4-bolum-kosullar-ve-akilli-akislar-5-bolum-web-den-veri-cekmek-http-request-ile-dis-dunya-ile-konus","label":"5. Bölüm: Web’den Veri Çekmek – HTTP Request ile Dış Dünya ile Konuş!"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request","label":"n8n ile Otomasyon 5. Bölüm - Web'den Veri Çekmek (`HTTP Request`)"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-http-request-node-nedir","label":"🔹 HTTP Request Node Nedir?"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-ornek-hava-durumunu-cekmek","label":"🛠 Örnek: Hava Durumunu Çekmek"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-1-api-key-al","label":"1. API Key Al"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-2-http-request-node-u-olustur","label":"2. HTTP Request Node’u Oluştur"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-ornek-veri-yaniti","label":"🧪 Örnek Veri Yanıtı"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-veriyi-kullanmak","label":"🔎 Bu Veriyi Kullanmak"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-mini-gorev-gunluk-hava-durumu-botu","label":"👨‍🔬 Mini Görev: Günlük Hava Durumu Botu"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-5-bolum-web-den-veri-cekmek-http-request-6-bolum-webhook-larla-disaridan-veri-almak-gercek-zamanli-otomasyonlar","label":"6. Bölüm: Webhook’larla Dışarıdan Veri Almak – Gerçek Zamanlı Otomasyonlar"}]},{"id":"entegrasyonlar","label":"Entegrasyonlar","startId":"entegrasyonlar","nav":[{"id":"entegrasyonlar","label":"Gerçek Entegrasyonlar"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak","label":"n8n ile Otomasyon 6. Bölüm - Webhook ile Gerçek Zamanlı Veri Almak"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-webhook-nedir","label":"🔹 Webhook Nedir?"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-webhook-kurulumu","label":"🛠 Webhook Kurulumu"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-1-webhook-node-u-ekle","label":"1. Webhook Node'u Ekle"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-2-test-moduna-al","label":"2. Test Moduna Al"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-3-webhook-url-yi-kopyala","label":"3. Webhook URL’yi Kopyala"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-basit-html-form-ile-test","label":"🧪 Basit HTML Form ile Test"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-otomasyonu-tamamla","label":"🔁 Otomasyonu Tamamla"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-mini-gorev-form-e-posta-otomasyonu","label":"👨‍🔬 Mini Görev: Form → E-posta Otomasyonu"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-6-bolum-webhook-ile-gercek-zamanli-veri-almak-7-bolum-google-sheets-ile-otomasyon-veri-ekle-oku-guncelle","label":"7. Bölüm: Google Sheets ile Otomasyon – Veri Ekle, Oku, Güncelle"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon","label":"n8n ile Otomasyon 7. Bölüm - Google Sheets ile Otomasyon"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-on-hazirlik-google-sheets-api-baglantisi","label":"🔐 Ön Hazırlık: Google Sheets API Bağlantısı"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-1-google-hesabini-bagla","label":"1. Google Hesabını Bağla"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-ornek-senaryo-form-verisini-sheets-e-kaydet","label":"🛠 Örnek Senaryo: Form Verisini Sheets’e Kaydet"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-ayarlar","label":"Ayarlar:"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-diger-google-sheets-islemleri","label":"🔄 Diğer Google Sheets İşlemleri"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-mini-gorev-katilim-listesi-olustur","label":"👨‍🔬 Mini Görev: Katılım Listesi Oluştur"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-7-bolum-google-sheets-ile-otomasyon-8-bolum-telegram-ile-bildirim-gonderme-akilli-uyari-sistemi-kur","label":"8. Bölüm: Telegram ile Bildirim Gönderme – Akıllı Uyarı Sistemi Kur"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur","label":"n8n ile Otomasyon 8. Bölüm - Telegram ile Otomatik Bildirim Sistemi Kur"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-telegram-botu-nasil-olusturulur","label":"🤖 Telegram Botu Nasıl Oluşturulur?"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-botu-n8n-e-bagla","label":"🔐 Botu n8n’e Bağla"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-ornek-yeni-kayit-geldiginde-telegram-dan-bildirim-gonder","label":"🛠 Örnek: Yeni Kayıt Geldiğinde Telegram’dan Bildirim Gönder"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-ayarlar","label":"Ayarlar:"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-mini-gorev-uyari-sistemi-kur","label":"👨‍🔬 Mini Görev: Uyarı Sistemi Kur"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-8-bolum-telegram-ile-otomatik-bildirim-sistemi-kur-9-bolum-n8n-i-gercek-bir-projeye-donusturmek-uctan-uca-mini-sistem-kurulumu","label":"9. Bölüm: n8n’i Gerçek Bir Projeye Dönüştürmek – Uçtan Uca Mini Sistem Kurulumu"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje","label":"n8n ile Otomasyon 9. Bölüm - Gerçek Bir Proje"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-bu-projenin-akisi-nasil","label":"🎯 Bu Projenin Akışı Nasıl?"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-kullanilacak-node-lar","label":"🧩 Kullanılacak Node'lar"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-adim-adim-kurulum","label":"🛠 Adım Adım Kurulum"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-1-webhook-node","label":"1. Webhook Node"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-2-if-node","label":"2. IF Node"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-3-telegram-node-opsiyonel-uyari","label":"3. Telegram Node (Opsiyonel Uyarı)"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-4-google-sheets-node","label":"4. Google Sheets Node"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-test-zamani","label":"🧪 Test Zamanı"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-9-bolum-gercek-bir-proje-10-bolum-n8n-workflow-larini-yayinlama-ve-paylasma","label":"10. Bölüm: n8n Workflow’larını Yayınlama ve Paylaşma"}]},{"id":"yonetim","label":"Yönetim","startId":"yonetim","nav":[{"id":"yonetim","label":"Paylaşım, Hata Yönetimi ve API"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek","label":"n8n ile Otomasyon 10. Bölüm - Workflow’ları Paylaşmak, Dışa Aktarmak ve Geri Yüklemek"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-disa-aktarmak-export","label":"📤 Workflow Dışa Aktarmak (Export)"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-ice-aktarmak-import","label":"📥 Workflow İçe Aktarmak (Import)"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-reusable-akislar-alt-workflow-lar","label":"🔁 Reusable Akışlar (Alt Workflow’lar)"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-nasil","label":"Nasıl?"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-workflow-paylasimi","label":"🌍 Workflow Paylaşımı"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-mini-gorev-kendi-otomasyonunu-yedekle","label":"👨‍🔬 Mini Görev: Kendi Otomasyonunu Yedekle"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-10-bolum-workflow-lari-paylasmak-disa-aktarmak-ve-geri-yuklemek-11-bolum-n8n-de-hata-yonetimi-ve-log-lari-okuma","label":"11. Bölüm: n8n’de Hata Yönetimi ve Log’ları Okuma"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging","label":"n8n ile Otomasyon 11. Bölüm - Hata Yönetimi ve Log’ları Okuma (Debugging)"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-bu-bolumde-ne-ogrenecegiz","label":"🎯 Bu Bölümde Ne Öğreneceğiz?"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-otomasyon-hata-verdiginde-ne-olur","label":"🧨 Otomasyon Hata Verdiğinde Ne Olur?"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-log-lara-nasil-ulasilir","label":"📜 Log’lara Nasıl Ulaşılır?"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-json-incelemesi","label":"🔍 JSON İncelemesi"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-yaygin-hata-turleri-ve-cozumleri","label":"⚠️ Yaygın Hata Türleri ve Çözümleri"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-ipucu-workflow-u-safe-mode-da-calistirmak","label":"🧰 İpucu: Workflow'u “Safe Mode”da Çalıştırmak"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-mini-gorev-bilincli-hata-testi","label":"👨‍🔬 Mini Görev: Bilinçli Hata Testi"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-bu-bolumde-ne-ogrendik","label":"🧠 Bu Bölümde Ne Öğrendik?"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-siradaki-bolumde-ne-var","label":"👀 Sıradaki Bölümde Ne Var?"},{"id":"n8n-ile-otomasyon-11-bolum-hata-yonetimi-ve-log-lari-okuma-debugging-12-bolum-n8n-workflow-larini-zamanlamak-cron-ile-otomatik-tetikleme","label":"12. Bölüm: n8n Workflow'larını Zamanlamak – Cron ile Otomatik Tetikleme"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi","label":"API’lerin Sihirli Dünyası - n8n ile Adım Adım Otomasyon Rehberi"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-api-nedir","label":"🔧 API Nedir?"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-gunluk-hayattan-ornek","label":"🍕 Günlük Hayattan Örnek:"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-n8n-api-leri-nasil-kullanir","label":"🤖 n8n API’leri Nasıl Kullanır?"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ornek-senaryo","label":"🔁 Örnek Senaryo:"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-api-turleri","label":"🧱 API Türleri"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-1-rest-api","label":"1. REST API"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-2-webhook","label":"2. Webhook"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-3-graphql","label":"3. GraphQL"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-4-sse-server-sent-events","label":"4. SSE (Server-Sent Events)"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-5-soap-api","label":"5. SOAP API"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-6-websocket-api","label":"6. WebSocket API"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-7-grpc-api","label":"7. gRPC API"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ozetle","label":"📌 Özetle"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-ornek-otomasyon","label":"🎯 Örnek Otomasyon:"},{"id":"api-lerin-sihirli-dunyasi-n8n-ile-adim-adim-otomasyon-rehberi-sonraki-adim","label":"🛠️ Sonraki Adım"}]},{"id":"auth","label":"Authentication","startId":"auth","nav":[{"id":"auth","label":"Authentication Rehberi"},{"id":"bonus-1-n8n-ile-otomasyon-authentication","label":"BONUS 1 - n8n İle Otomasyon - Authentication"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-1-authentication-nedir","label":"1. Authentication nedir?"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-2-n8n-de-bu-is-nasil-oluyor","label":"2. n8n’de bu iş nasıl oluyor?"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-3-kullanabileceginiz-anahtar-cesitleri","label":"3. Kullanabileceğiniz Anahtar Çeşitleri"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-4-hangi-anahtari-secmeli","label":"4. Hangi Anahtarı Seçmeli?"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-5-hangi-yontemi-kullanacagimizi-nasil-bilecegiz","label":"5. Hangi Yöntemi Kullanacağımızı Nasıl Bileceğiz?"},{"id":"bonus-1-n8n-ile-otomasyon-authentication-kisacasi","label":"Kısacası:"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar","label":"BONUS 2 - Sık Kullandığımız Authenticationlar"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-sik-kullandigimiz-authenticationlar","label":"Sık Kullandığımız Authenticationlar"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-1-google-cloud-console-drive-gsheet-vb","label":"1. Google Cloud Console (Drive, Gsheet vb.)"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-2-openai-chatgpt","label":"2. OpenAI ChatGPT"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-3-kie-ai-burada-erisebilirsiniz","label":"3. KIE AI: Burada Erişebilirsiniz"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-4-fal-ai","label":"4. Fal AI"},{"id":"bonus-2-sik-kullandigimiz-authenticationlar-bonus-auth-degerleri-neden-farkli","label":"🎁 Bonus: Auth Değerleri Neden Farklı?"},{"id":"sik-kullandigimiz-authenticationlar","label":"Sık Kullandığımız Authenticationlar"},{"id":"sik-kullandigimiz-authenticationlar-1-google-cloud-console-drive-gsheet-vb","label":"1. Google Cloud Console (Drive, Gsheet vb.)"},{"id":"sik-kullandigimiz-authenticationlar-2-openai-chatgpt","label":"2. OpenAI ChatGPT"},{"id":"sik-kullandigimiz-authenticationlar-3-kie-ai","label":"3. KIE AI"},{"id":"sik-kullandigimiz-authenticationlar-4-fal-ai","label":"4. Fal AI"},{"id":"sik-kullandigimiz-authenticationlar-bonus-auth-degerleri-neden-farkli","label":"🎁 Bonus: Auth Değerleri Neden Farklı?"}]}]</script>
+    <script src="assets/site.js"></script>
+  </body>
+</html>
