@@ -178,7 +178,7 @@ function prepareMarkdown(markdown, assetIndex, copiedAssets, missingAssets) {
     }
 
     const caption = readableAssetCaption(assetName);
-    return `\n\n<figure class="screen-figure"><img src="${webPath}" alt="${escapeHtml(caption)}" loading="lazy" decoding="async" /><figcaption>${escapeHtml(caption)}</figcaption></figure>\n\n`;
+    return `\n\n<figure class="screen-figure"><img src="${webPath}" alt="${escapeHtml(caption)}" decoding="async" /><figcaption>${escapeHtml(caption)}</figcaption></figure>\n\n`;
   });
 
   text = text.replace(/\[\[([^\]\|]+)\|([^\]]+)\]\]/g, '$2');
