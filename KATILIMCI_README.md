@@ -2,7 +2,11 @@
 
 Merhaba,
 
-Bu kaynak, n8n dersinde gösterilen kısa rehberleri ve ekran görüntülerini tek bir yerde toplamak için hazırlandı. Ders sırasında ilgili başlığı açabilir, sonrasında da kendi hızınızda tekrar edebilirsiniz.
+Bu kaynak, n8n dersinde gösterilen kısa rehberleri ve ekran görüntülerini tek bir yerde toplar. Ders sırasında ilgili başlığı açabilir, sonrasında kendi hızınızda tekrar edebilirsiniz.
+
+Site:
+
+https://nefisebora.github.io/n8n-rehberi/
 
 ## İçerikte Neler Var?
 
@@ -11,16 +15,8 @@ Bu kaynak, n8n dersinde gösterilen kısa rehberleri ve ekran görüntülerini t
 - Google Sheets ve Telegram entegrasyonları
 - Workflow paylaşma, dışa aktarma ve hata okuma
 - API mantığı ve authentication rehberleri
-- Google Cloud, OpenAI, KIE AI ve Fal AI credential adımları
-
-## Açmak İçin
-
-Site dosyası: `index.html`
-
-GitHub Pages yayını açıldıktan sonra buraya yayın bağlantısı eklenebilir.
 
 ## İletişim
 
 **Nefise Bora**  
-**E-posta:** [nefisebora1@gmail.com](mailto:nefisebora1@gmail.com)  
 **LinkedIn:** [linkedin.com/in/nefisebora](https://www.linkedin.com/in/nefisebora/)

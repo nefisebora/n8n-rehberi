@@ -1,35 +1,16 @@
 # n8n Rehberi
 
-Bu klasör tek başına GitHub'a eklenebilir statik n8n 101 rehber sitesidir.
+Nefise Bora'nın n8n 101 dersi için hazırlanmış ekran görüntülü katılımcı rehberi.
 
-## Yerel Kullanım
+Canlı site:
 
-`index.html` dosyasını tarayıcıda açabilirsiniz. Basit yerel sunucu isterseniz:
+https://nefisebora.github.io/n8n-rehberi/
 
-```bash
-python3 -m http.server 5173
-```
+## İçerik
 
-Sonra `http://localhost:5173` adresini açın.
+- n8n arayüzü ve ilk workflow kurulumu
+- Node, webhook, HTTP Request ve koşullu akış mantığı
+- Google Sheets ve Telegram entegrasyonları
+- Workflow paylaşma, dışa aktarma ve hata okuma
+- API mantığı ve authentication adımları
 
-## İçeriği Yeniden Üretme
-
-Kaynak Markdown dosyaları şu klasörden okunur:
-
-```text
-/Users/nefisebora/Dropbox/Obsidian Vault/Sync/Yapay Zeka Notlarım Obsidian/Yapay Zeka/Yapay Zeka Otomasyonları/n8n 101
-```
-
-Codex ortamındaki Node ile:
-
-```bash
-/Users/nefisebora/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node tools/build-content.mjs
-```
-
-Script Markdown dosyalarını işler, Obsidian görsel bağlantılarını `assets/source/` altına kopyalar ve `index.html` dosyasını yeniler.
-
-## GitHub Pages
-
-Bu klasörü ayrı bir GitHub repository kökü olarak kullanın. `main` branch'e push edildiğinde `.github/workflows/deploy-pages.yml` repo kökünü GitHub Pages'e yayınlar.
-
-Repository ayarlarında Pages kaynağı olarak **GitHub Actions** seçili olmalıdır.
